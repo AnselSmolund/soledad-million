@@ -6,7 +6,6 @@ import {
   Box,
   Container,
   CssBaseline,
-  Paper,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { getStuff } from "./get-strava-activities";
