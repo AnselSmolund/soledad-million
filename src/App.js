@@ -6,6 +6,7 @@ import {
   Box,
   Container,
   CssBaseline,
+  TextField,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { getStuff } from "./get-strava-activities";
@@ -14,14 +15,13 @@ import { getStuff } from "./get-strava-activities";
 const theme = createTheme({
   typography: {
     h1: {
-      fontSize: "4rem",
+      fontSize: "2rem",
       fontWeight: 700,
       textAlign: "center",
-      marginBottom: "1rem",
       color: "#FFFFFF", // White color for better contrast on dark backgrounds
     },
     h2: {
-      fontSize: "3rem",
+      fontSize: "2rem",
       fontWeight: 600,
       textAlign: "center",
       color: "#FF6F61",
@@ -43,7 +43,7 @@ const theme = createTheme({
   },
 });
 
-function App() {
+function HomePage() {
   const [activities, setActivities] = useState([]);
   const [totalElevationGain, setTotalElevationGain] = useState(0);
 
@@ -51,7 +51,6 @@ function App() {
     const fetchActivities = async () => {
       try {
         const response = await getStuff();
-        console.log(response);
         setTotalElevationGain(response.elevGain);
         setActivities(response.athletes);
       } catch (error) {
@@ -71,9 +70,9 @@ function App() {
           minHeight: "100vh", // Full viewport height
           width: "100%", // Full width
           backgroundImage: `url('/bg-img.jpg')`, // Reference your image from the public folder
-          backgroundSize: "cover",
+          backgroundSize: "fill",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
+          backgroundRepeat: "repeat",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -90,12 +89,15 @@ function App() {
             padding: 4,
           }}
         >
-          <Typography variant="h1" style={{ color: "black" }}>
-            SOLEDAD MILLION CHALLENGE
-          </Typography>
-
+          <Box sx={{ mb: 4 }}>
+            <Typography variant="h1" style={{ color: "black" }}>
+              {"SOLEDAD MILLION CHALLENGE"}
+            </Typography>
+            <Typography style={{ fontSize: 14 }}> presented by MAAP</Typography>
+          </Box>
           <Typography variant="h2">
-            TOTAL: {totalElevationGain.toLocaleString()} feet
+            TOTAL <br />
+            {totalElevationGain.toLocaleString()} FT
           </Typography>
 
           <Typography variant="h4" gutterBottom sx={{ marginBottom: 2 }}>
@@ -168,4 +170,25 @@ function App() {
   );
 }
 
+const App = () => {
+  const [show, setShouldShow] = useState(false);
+
+  console.log(show);
+  if (show) {
+    return <HomePage />;
+  }
+  return (
+    <Container sx={{ mt: 50 }}>
+      {" "}
+      <TextField
+        onChange={(val) => {
+          console.log(val.currentTarget.value);
+          if (val.currentTarget.value === "maap") {
+            setShouldShow(true);
+          }
+        }}
+      ></TextField>
+    </Container>
+  );
+};
 export default App;
