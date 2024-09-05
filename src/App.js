@@ -61,6 +61,9 @@ function HomePage() {
     fetchActivities();
   }, []);
 
+  if (activities.length <= 0) {
+    return <Container sx={{ mt: 40 }}> LOADING</Container>;
+  }
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -178,8 +181,14 @@ const App = () => {
     return <HomePage />;
   }
   return (
-    <Container sx={{ mt: 50 }}>
+    <Container sx={{ mt: 30 }}>
       {" "}
+      <Typography variant="h4" sx={{ color: "white" }}>
+        {"SOLEDAD MILLION CHALLENGE"}
+      </Typography>
+      <Typography variant="h6" sx={{ color: "black", mb: 10 }}>
+        enter password to continue
+      </Typography>
       <TextField
         onChange={(val) => {
           console.log(val.currentTarget.value);
