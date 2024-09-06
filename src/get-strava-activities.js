@@ -1,8 +1,8 @@
-const STRAVA_ACCESS_TOKEN = "98eed4d9326c5e3cd0b2440c7cada435aae92051";
+const STRAVA_ACCESS_TOKEN = "ae85bbe9ab5e95bc544dfae3b354e536ef39514f";
 const STRAVA_CLUB_ID = "soledad-million";
 
 export const getStuff = async () => {
-  const url = `https://www.strava.com/api/v3/clubs/${STRAVA_CLUB_ID}/activities?per_page=200`;
+  const url = `https://www.strava.com/api/v3/clubs/${STRAVA_CLUB_ID}/activities?per_page=50`;
 
   try {
     const response = await fetch(url, {

@@ -61,7 +61,7 @@ function HomePage() {
     fetchActivities();
   }, []);
 
-  if (activities.length <= 0) {
+  if (!activities) {
     return <Container sx={{ mt: 40 }}> LOADING</Container>;
   }
   return (
