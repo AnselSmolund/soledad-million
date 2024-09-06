@@ -1,4 +1,4 @@
-const STRAVA_ACCESS_TOKEN = "ae85bbe9ab5e95bc544dfae3b354e536ef39514f";
+const STRAVA_ACCESS_TOKEN = "45aa9d8c70571e91141bd186ffa8af091a680338";
 const STRAVA_CLUB_ID = "soledad-million";
 
 export const getStuff = async () => {
@@ -22,7 +22,6 @@ export const getStuff = async () => {
 
     const activitiesByAthlete = {};
 
-    // Group activities by athlete and find max elevation gain for each
     activities.forEach((activity) => {
       const athleteName = `${activity.athlete.firstname} ${activity.athlete.lastname}`;
       if (!activitiesByAthlete[athleteName]) {
@@ -30,7 +29,6 @@ export const getStuff = async () => {
       }
     });
 
-    // Prepare data to send back
     const result = Object.values(activitiesByAthlete).map((activity) => ({
       athleteName: `${activity.athlete.firstname} ${activity.athlete.lastname}`,
       activityName: activity.name,
@@ -42,7 +40,11 @@ export const getStuff = async () => {
     const totalElevationGain =
       result.reduce((acc, curr) => acc + curr.elevationGain, 0) * 3.28;
 
-    return { elevGain: Math.ceil(totalElevationGain), athletes: result };
+    return {
+      statusCode: 200,
+      elevGain: Math.ceil(totalElevationGain),
+      athletes: result,
+    };
   } catch (error) {
     console.error("Error fetching Strava activities:", error);
     return {

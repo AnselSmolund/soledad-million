@@ -11,14 +11,13 @@ import {
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { getStuff } from "./get-strava-activities";
 
-// Custom theme to modify default Material-UI styling
 const theme = createTheme({
   typography: {
     h1: {
       fontSize: "2rem",
       fontWeight: 700,
       textAlign: "center",
-      color: "#FFFFFF", // White color for better contrast on dark backgrounds
+      color: "#FFFFFF",
     },
     h2: {
       fontSize: "2rem",
@@ -47,21 +46,45 @@ function HomePage() {
   const [activities, setActivities] = useState([]);
   const [totalElevationGain, setTotalElevationGain] = useState(0);
 
+  const [error, setError] = useState(false);
   useEffect(() => {
     const fetchActivities = async () => {
-      try {
-        const response = await getStuff();
+      const response = await getStuff();
+      if (response.statusCode === 200) {
         setTotalElevationGain(response.elevGain);
         setActivities(response.athletes);
-      } catch (error) {
-        console.error("Error fetching activities:", error);
+      } else {
+        setError(true);
       }
     };
 
     fetchActivities();
   }, []);
 
-  if (!activities) {
+  if (error) {
+    return (
+      <Container
+        sx={{
+          mt: 20,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <Typography variant="h3"> CHECK BACK SEP_22</Typography>
+        <Box
+          component="img"
+          sx={{
+            width: 250,
+            mt: 10,
+          }}
+          alt="The house from the offer."
+          src="/Maap_logo.png"
+        />
+      </Container>
+    );
+  }
+  if (!activities || (activities && activities.length <= 0)) {
     return <Container sx={{ mt: 40 }}> LOADING</Container>;
   }
   return (
@@ -99,7 +122,8 @@ function HomePage() {
             <Typography style={{ fontSize: 14 }}> presented by MAAP</Typography>
           </Box>
           <Typography variant="h2">
-            TOTAL <br />
+            <span style={{ fontSize: 20 }}>TOTAL </span>
+            <br />
             {totalElevationGain.toLocaleString()} FT
           </Typography>
 
@@ -132,6 +156,14 @@ function HomePage() {
                     style={{ fontSize: 20 }}
                   >
                     {activity.athleteName}
+                  </Typography>
+                  <Typography
+                    variant="h3"
+                    component="div"
+                    gutterBottom
+                    style={{ fontSize: 12 }}
+                  >
+                    {activity.activityName}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -173,11 +205,11 @@ function HomePage() {
   );
 }
 
+const password = "maap";
 const App = () => {
-  const [show, setShouldShow] = useState(false);
+  const [currentInput, setCurrentInput] = useState("");
 
-  console.log(show);
-  if (show) {
+  if (currentInput === password) {
     return <HomePage />;
   }
   return (
@@ -190,11 +222,9 @@ const App = () => {
         enter password to continue
       </Typography>
       <TextField
+        value={currentInput}
         onChange={(val) => {
-          console.log(val.currentTarget.value);
-          if (val.currentTarget.value === "maap") {
-            setShouldShow(true);
-          }
+          setCurrentInput(val.currentTarget.value);
         }}
       ></TextField>
     </Container>
