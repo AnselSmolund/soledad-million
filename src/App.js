@@ -47,6 +47,7 @@ function HomePage() {
   const [totalElevationGain, setTotalElevationGain] = useState(0);
 
   const [error, setError] = useState(false);
+
   useEffect(() => {
     const fetchActivities = async () => {
       const response = await getStuff();
@@ -122,13 +123,14 @@ function HomePage() {
             <Typography style={{ fontSize: 14 }}> presented by MAAP</Typography>
           </Box>
           <Typography variant="h2">
-            <span style={{ fontSize: 20 }}>TOTAL </span>
+            {}
+            <span style={{ fontSize: 20 }}> TOTAL </span>
             <br />
             {totalElevationGain.toLocaleString()} FT
           </Typography>
 
-          <Typography variant="h4" gutterBottom sx={{ marginBottom: 2 }}>
-            Rider List
+          <Typography variant="h5" gutterBottom sx={{ marginBottom: 2 }}>
+            LEADERBOARD
           </Typography>
           <Box
             sx={{
@@ -156,14 +158,6 @@ function HomePage() {
                     style={{ fontSize: 20 }}
                   >
                     {activity.athleteName}
-                  </Typography>
-                  <Typography
-                    variant="h3"
-                    component="div"
-                    gutterBottom
-                    style={{ fontSize: 12 }}
-                  >
-                    {activity.activityName}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -214,7 +208,6 @@ const App = () => {
   }
   return (
     <Container sx={{ mt: 30 }}>
-      {" "}
       <Typography variant="h4" sx={{ color: "white" }}>
         {"SOLEDAD MILLION CHALLENGE"}
       </Typography>
