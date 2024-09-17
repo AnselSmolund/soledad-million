@@ -91,10 +91,9 @@ function HomePage() {
             </Typography>
             <Typography style={{ fontSize: 14 }}> presented by MAAP</Typography>
           </Box>
-          <Typography variant="h2">
+          <span style={{ fontSize: 13, color: "black" }}>TODAY'S TOTAL:</span>
+          <Typography variant="h2" fontSize={50}>
             {}
-            <span style={{ fontSize: 20 }}> TOTAL </span>
-            <br />
             {rideData.totalElevationGain.toLocaleString()} FT
           </Typography>
 
