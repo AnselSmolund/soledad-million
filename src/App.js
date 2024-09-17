@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Card,
   CardContent,
@@ -10,6 +10,37 @@ import {
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { getStuff } from "./get-strava-activities";
+
+//import React, {useRef} from 'react';
+import { db } from './firebase';
+import { addDoc, collection } from "@firebase/firestore"
+
+function Home() {
+  const messageRef = useRef();
+  const ref = collection(db, "message");
+  
+  const handleSave = async(e) => {
+    e.preventDefault();
+    console.log(messageRef.current.value);
+    let data = {
+      message: messageRef.current.value,
+    }
+    try{
+      addDoc(ref, )
+    }catch( e){
+      console.log(e);
+    }
+  };
+  return(
+    <div>
+      <form onSubmit={handleSave}>
+        <label>Enter Message</label>
+        <input type ="text" ref={messageRef} />
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  )
+}
 
 const theme = createTheme({
   typography: {
@@ -47,7 +78,6 @@ function HomePage() {
   const [totalElevationGain, setTotalElevationGain] = useState(0);
 
   const [error, setError] = useState(false);
-
   useEffect(() => {
     const fetchActivities = async () => {
       const response = await getStuff();
@@ -61,7 +91,7 @@ function HomePage() {
 
     fetchActivities();
   }, []);
-
+  //Home();
   if (error) {
     return (
       <Container
@@ -82,6 +112,7 @@ function HomePage() {
           alt="The house from the offer."
           src="/Maap_logo.png"
         />
+        <Home /> //This is to test the console for traffic to firebase
       </Container>
     );
   }
