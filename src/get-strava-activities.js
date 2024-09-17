@@ -1,3 +1,17 @@
+import {
+  addDoc,
+  collection,
+  setDoc,
+  doc,
+  query,
+  where,
+  getDocs,
+  writeBatch,
+  getDoc,
+} from "firebase/firestore";
+
+import db from "./firestoreService";
+
 const STRAVA_CLUB_ID = "soledad-million";
 
 const clientId = process.env.REACT_APP_STRAVA_CLIENT_ID;
@@ -43,66 +57,95 @@ async function checkAndRefreshToken() {
   return accessToken;
 }
 
-export const getStuff = async () => {
+export const runFetchStravaActivities = async () => {
   const accessToken = await checkAndRefreshToken();
 
   const url = `https://www.strava.com/api/v3/clubs/${STRAVA_CLUB_ID}/activities?per_page=200`;
 
-  try {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    });
+  const response = await fetch(url, {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+    },
+  });
 
-    if (!response.ok) {
-      throw new Error(
-        `Error fetching Strava activities: ${response.statusText}`
-      );
-    }
-
-    const activities = await response.json();
-
-    const activitiesByAthlete = {};
-
-    activities.forEach((activity) => {
-      const athleteName = `${activity.athlete.firstname} ${activity.athlete.lastname}`;
-      if (activity.type !== "Ride") {
-        return;
-      }
-      if (!activitiesByAthlete[athleteName]) {
-        activitiesByAthlete[athleteName] = activity;
-      }
-    });
-
-    const result = Object.values(activitiesByAthlete).map((activity) => ({
-      athleteName: `${activity.athlete.firstname} ${activity.athlete.lastname}`,
-      activityName: activity.name,
-      elevationGain: Math.ceil(activity.total_elevation_gain * 3.28),
-      distance: Math.ceil(activity.distance * 0.000621371),
-      elapsedTime: Math.ceil(activity.elapsed_time / 60),
-    }));
-
-    const totalElevationGain = result.reduce(
-      (acc, curr) => acc + curr.elevationGain,
-      0
-    );
-
-    const sortedResults = result.sort(
-      (a, b) => b.elevationGain - a.elevationGain
-    );
-
-    return {
-      statusCode: 200,
-      elevGain: Math.ceil(totalElevationGain),
-      athletes: sortedResults,
-    };
-  } catch (error) {
-    console.error("Error fetching Strava activities:", error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: "Failed to fetch Strava activities" }),
-    };
+  if (!response.ok) {
+    throw new Error(`Error fetching Strava activities: ${response.statusText}`);
   }
+
+  const activities = await response.json();
+  storeActivities(activities);
+};
+
+const storeActivities = async (activities) => {
+  const batch = writeBatch(db); // Initialize a Firestore batch
+  let currentDate = new Date().toJSON().slice(0, 10);
+  const activityPromises = activities
+    .filter((activity) => activity.type === "Ride") // Only process "Ride" activities
+    .map(async (activity) => {
+      const activityData = {
+        athleteName: `${activity.athlete.firstname} ${activity.athlete.lastname}`,
+        activityName: activity.name || "Unnamed Activity", // Handle missing name
+        elevationGain: Math.ceil(activity.total_elevation_gain * 3.28),
+        distance: Math.ceil(activity.distance * 0.000621371),
+        elapsedTime: Math.ceil(activity.elapsed_time / 60),
+      };
+
+      const activityId = `${activityData.elevationGain}${activityData.elapsedTime}${activityData.distance}`;
+      const data = {
+        ...activityData,
+        date: currentDate,
+        id: activityId,
+      };
+
+      // Check if the activity already exists
+      const activityDocRef = doc(db, "activities", activityId);
+      const docSnapshot = await getDoc(activityDocRef);
+
+      if (!docSnapshot.exists()) {
+        console.log("doesnt exist", data);
+        // Add the activity to the batch if it doesn't exist
+        batch.set(activityDocRef, data);
+      }
+    });
+
+  try {
+    await Promise.all(activityPromises); // Wait for all document existence checks to complete
+    await batch.commit(); // Commit the batch to Firestore
+    console.log("Batch commit successful");
+  } catch (error) {
+    console.error("Error adding activities in batch:", error);
+  }
+};
+
+export const getAllActivitiesFromFirebase = async () => {
+  const ref = collection(db, "activities");
+  let currentDate = new Date().toJSON().slice(0, 10);
+
+  const q = query(ref, where("date", "==", currentDate));
+
+  let result = [];
+
+  try {
+    const querySnapshot = await getDocs(q);
+    querySnapshot.forEach((doc) => {
+      result.push(doc.data());
+    });
+  } catch (error) {
+    console.error("Error querying documents: ", error);
+  }
+
+  const totalElevationGain = result.reduce(
+    (acc, curr) => acc + curr.elevationGain,
+    0
+  );
+
+  const sortedResults = result.sort(
+    (a, b) => b.elevationGain - a.elevationGain
+  );
+
+  return {
+    totalElevationGain,
+    sortedResults,
+  };
 };
