@@ -5,7 +5,6 @@ const clientSecret = process.env.REACT_APP_STRAVA_CLIENT_SECRET;
 const refreshToken = process.env.REACT_APP_STRAVA_REFRESH_TOKEN;
 
 export const getNewAccessToken = async () => {
-  console.log(refreshToken);
   const response = await fetch("https://www.strava.com/oauth/token", {
     method: "POST",
     headers: {
@@ -85,12 +84,15 @@ export const getStuff = async () => {
       elapsedTime: Math.ceil(activity.elapsed_time / 60),
     }));
 
-    const totalElevationGain =
-      result.reduce((acc, curr) => acc + curr.elevationGain, 0) * 3.28;
+    const totalElevationGain = result.reduce(
+      (acc, curr) => acc + curr.elevationGain,
+      0
+    );
 
     const sortedResults = result.sort(
       (a, b) => b.elevationGain - a.elevationGain
     );
+
     return {
       statusCode: 200,
       elevGain: Math.ceil(totalElevationGain),

@@ -59,7 +59,9 @@ function HomePage() {
       }
     };
 
-    fetchActivities();
+    if (!activities || activities.length === 0) {
+      fetchActivities();
+    }
   }, []);
 
   if (error) {
@@ -202,10 +204,20 @@ function HomePage() {
 const password = "maap";
 const App = () => {
   const [currentInput, setCurrentInput] = useState("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  if (currentInput === password) {
+  // Use effect to update authentication state
+  useEffect(() => {
+    if (currentInput === password) {
+      setIsAuthenticated(true);
+    }
+  }, [currentInput]); // Run effect only when `currentInput` changes
+
+  // Only render HomePage once authentication is successful
+  if (isAuthenticated) {
     return <HomePage />;
   }
+
   return (
     <Container sx={{ mt: 30 }}>
       <Typography variant="h4" sx={{ color: "white" }}>
@@ -223,4 +235,5 @@ const App = () => {
     </Container>
   );
 };
+
 export default App;
