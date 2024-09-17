@@ -11,7 +11,6 @@ import {
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { getStuff } from "./get-strava-activities";
 
-//import React, {useRef} from 'react';
 import { db } from './firebase';
 import { addDoc, collection } from "@firebase/firestore"
 
@@ -91,7 +90,6 @@ function HomePage() {
 
     fetchActivities();
   }, []);
-  //Home();
   if (error) {
     return (
       <Container
@@ -112,7 +110,7 @@ function HomePage() {
           alt="The house from the offer."
           src="/Maap_logo.png"
         />
-        <Home /> //This is to test the console for traffic to firebase
+        <Home />
       </Container>
     );
   }
