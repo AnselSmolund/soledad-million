@@ -5,13 +5,11 @@ const fetch = require("node-fetch");
 admin.initializeApp();
 const db = admin.firestore();
 
-// Retrieve secrets from Firebase environment variables
 const clientId = functions.config().strava.client_id;
 const clientSecret = functions.config().strava.client_secret;
 const refreshToken = functions.config().strava.refresh_token;
 const STRAVA_CLUB_ID = "soledad-million";
 
-// Cloud function triggered every 60 minutes
 exports.storeActivitiesCron = functions.pubsub
   .schedule("every 60 minutes")
   .onRun(async (context) => {
@@ -25,47 +23,61 @@ exports.storeActivitiesCron = functions.pubsub
     return null;
   });
 
-// Store Strava activities in Firestore
 const storeActivities = async (activities) => {
-  const batch = db.batch(); // Initialize a Firestore batch
-  let currentDate = new Date()
-    .toLocaleString("en-US", {
-      timeZone: "America/Los_Angeles",
-    })
-    .slice(0, 9);
+  const batch = db.batch();
+  let todaysDate = new Date();
+
+  let currentDate = `${todaysDate.getFullYear()}${(todaysDate.getMonth() + 1)
+    .toString()
+    .padStart(2, "0")}${todaysDate.getDate().toString().padStart(2, "0")}`;
+
+  const dateDocRef = db.collection("activities").doc(currentDate);
+
+  const elevationGainRef = db.collection("dailyElevationGain").doc(currentDate);
+  const elevationDocSnapshot = await elevationGainRef.get();
+  let totalElevationGain = 0;
+
+  if (elevationDocSnapshot.exists) {
+    totalElevationGain = elevationDocSnapshot.data().totalElevationGain || 0;
+  }
 
   const activityPromises = activities
-    .filter((activity) => activity.type === "Ride") // Only process "Ride" activities
+    .filter((activity) => activity.type === "Ride")
     .map(async (activity) => {
+      const elevationGain = Math.ceil(activity.total_elevation_gain * 3.28);
+
       const activityData = {
         athleteName: `${activity.athlete.firstname} ${activity.athlete.lastname}`,
         activityName: activity.name || "Unnamed Activity",
-        elevationGain: Math.ceil(activity.total_elevation_gain * 3.28),
+        elevationGain: elevationGain,
         distance: Math.ceil(activity.distance * 0.000621371),
         elapsedTime: Math.ceil(activity.elapsed_time / 60),
+        id: `${Math.ceil(activity.distance)}${Math.ceil(
+          activity.elapsed_time
+        )}${elevationGain}`,
       };
 
-      const activityId = `${activityData.elevationGain}${activityData.elapsedTime}${activityData.distance}`;
-      const data = {
-        ...activityData,
-        date: currentDate,
-        id: activityId,
-      };
+      const activityId = activityData.id;
 
-      const activityDocRef = db.collection("activities").doc(activityId);
+      const activityDocRef = dateDocRef.collection("rides").doc(activityId);
       const docSnapshot = await activityDocRef.get();
 
       // If activity does not exist, add it to the batch
       if (!docSnapshot.exists) {
-        console.log("Activity does not exist, adding:", data);
-        batch.set(activityDocRef, data);
+        console.log("Activity does not exist, adding:", activityData);
+        batch.set(activityDocRef, activityData);
+        totalElevationGain += elevationGain; // Add elevation gain for this new activity
       }
     });
 
   try {
-    await Promise.all(activityPromises); // Wait for all document existence checks
-    await batch.commit(); // Commit the batch to Firestore
+    await Promise.all(activityPromises);
+    await batch.commit();
     console.log("Batch commit successful");
+
+    // Update the total elevation gain for the current date
+    await elevationGainRef.set({ totalElevationGain }, { merge: true });
+    console.log("Elevation gain updated for date:", currentDate);
   } catch (error) {
     console.error("Error adding activities in batch:", error);
   }

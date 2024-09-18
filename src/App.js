@@ -9,7 +9,11 @@ import {
   TextField,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { getAllActivitiesFromFirebase } from "./get-strava-activities";
+import {
+  getActivitiesByDate,
+  getAllActivitiesFromFirebase,
+  getElevationGainForDate,
+} from "./get-strava-activities";
 
 const theme = createTheme({
   typography: {
@@ -42,19 +46,33 @@ const theme = createTheme({
   },
 });
 
+let todaysDate = new Date();
+
+let currentDate = `${todaysDate.getFullYear()}${(todaysDate.getMonth() + 1)
+  .toLocaleString("en-US", {
+    timeZone: "America/Los_Angeles",
+  })
+  .padStart(2, "0")}${todaysDate.getDate().toString().padStart(2, "0")}`;
+
 function HomePage() {
-  const [rideData, setRideData] = useState(undefined);
+  const [activities, setActivities] = useState(undefined);
+  const [numberOfActivities, setNumberOfActivities] = useState(undefined);
+  const [elevationGain, setElevationGain] = useState(0);
 
   useEffect(() => {
     const fetchActivities = async () => {
-      const response = await getAllActivitiesFromFirebase();
-      setRideData(response);
+      const elevGain = await getElevationGainForDate(currentDate);
+      const rides = await getActivitiesByDate(currentDate);
+
+      setActivities(rides.topRides);
+      setNumberOfActivities(rides.totalActivities);
+      setElevationGain(elevGain);
     };
 
     fetchActivities();
   }, []);
 
-  if (!rideData) {
+  if (!activities) {
     return <h1> loading </h1>;
   }
   return (
@@ -91,15 +109,17 @@ function HomePage() {
             </Typography>
             <Typography style={{ fontSize: 14 }}> presented by MAAP</Typography>
           </Box>
-          <span style={{ fontSize: 13, color: "black" }}>TODAY'S TOTAL:</span>
+          <span style={{ fontSize: 16, color: "black" }}>
+            {numberOfActivities} RIDES TODAY
+          </span>
           <Typography variant="h2" fontSize={50}>
             {}
-            {rideData.totalElevationGain.toLocaleString()} FT
+            {elevationGain.toLocaleString()} FT
           </Typography>
+          <Box mb={3}>
+            <Typography variant="h5">LEADERBOARD</Typography>
+          </Box>
 
-          <Typography variant="h5" gutterBottom sx={{ marginBottom: 2 }}>
-            LEADERBOARD
-          </Typography>
           <Box
             sx={{
               display: "flex",
@@ -108,7 +128,7 @@ function HomePage() {
               justifyContent: "center",
             }}
           >
-            {rideData.sortedResults.map((activity, index) => (
+            {activities.map((activity, index) => (
               <Card
                 key={index}
                 sx={{
@@ -126,6 +146,12 @@ function HomePage() {
                     style={{ fontSize: 20 }}
                   >
                     {activity.athleteName}
+                  </Typography>
+                  <Typography
+                    style={{ fontSize: 12, fontWeight: 700 }}
+                    gutterBottom
+                  >
+                    {activity.activityName}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -156,14 +182,6 @@ function HomePage() {
                     <span style={{ fontWeight: 700 }}>
                       {activity.elapsedTime} minutes
                     </span>
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    gutterBottom
-                  >
-                    Date:{" "}
-                    <span style={{ fontWeight: 700 }}>{activity.date}</span>
                   </Typography>
                 </CardContent>
               </Card>
