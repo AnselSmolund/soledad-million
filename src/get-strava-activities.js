@@ -78,6 +78,7 @@ export const runFetchStravaActivities = async () => {
 const storeActivities = async (activities) => {
   const batch = writeBatch(db); // Initialize a Firestore batch
   let currentDate = new Date().toJSON().slice(0, 10);
+
   const activityPromises = activities
     .filter((activity) => activity.type === "Ride") // Only process "Ride" activities
     .map(async (activity) => {
@@ -118,7 +119,12 @@ const storeActivities = async (activities) => {
 
 export const getAllActivitiesFromFirebase = async () => {
   const ref = collection(db, "activities");
-  let currentDate = new Date().toJSON().slice(0, 10);
+
+  let currentDate = new Date()
+    .toLocaleString("en-US", {
+      timeZone: "America/Los_Angeles",
+    })
+    .slice(0, 9);
 
   const q = query(ref, where("date", "==", currentDate));
 

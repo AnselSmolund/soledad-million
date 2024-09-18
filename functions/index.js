@@ -28,7 +28,11 @@ exports.storeActivitiesCron = functions.pubsub
 // Store Strava activities in Firestore
 const storeActivities = async (activities) => {
   const batch = db.batch(); // Initialize a Firestore batch
-  const currentDate = new Date().toJSON().slice(0, 10);
+  let currentDate = new Date()
+    .toLocaleString("en-US", {
+      timeZone: "America/Los_Angeles",
+    })
+    .slice(0, 9);
 
   const activityPromises = activities
     .filter((activity) => activity.type === "Ride") // Only process "Ride" activities
