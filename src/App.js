@@ -11,7 +11,6 @@ import {
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import {
   getActivitiesByDate,
-  getAllActivitiesFromFirebase,
   getElevationGainForDate,
 } from "./get-strava-activities";
 
