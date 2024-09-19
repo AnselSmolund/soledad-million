@@ -9,7 +9,10 @@ import {
   TextField,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { getStuff } from "./get-strava-activities";
+import {
+  getActivitiesByDate,
+  getElevationGainForDate,
+} from "./get-strava-activities";
 
 const theme = createTheme({
   typography: {
@@ -42,53 +45,34 @@ const theme = createTheme({
   },
 });
 
-function HomePage() {
-  const [activities, setActivities] = useState([]);
-  const [totalElevationGain, setTotalElevationGain] = useState(0);
+let todaysDate = new Date();
 
-  const [error, setError] = useState(false);
+let currentDate = `${todaysDate.getFullYear()}${(todaysDate.getMonth() + 1)
+  .toLocaleString("en-US", {
+    timeZone: "America/Los_Angeles",
+  })
+  .padStart(2, "0")}${todaysDate.getDate().toString().padStart(2, "0")}`;
+
+function HomePage() {
+  const [activities, setActivities] = useState(undefined);
+  const [numberOfActivities, setNumberOfActivities] = useState(undefined);
+  const [elevationGain, setElevationGain] = useState(0);
 
   useEffect(() => {
     const fetchActivities = async () => {
-      const response = await getStuff();
-      if (response.statusCode === 200) {
-        setTotalElevationGain(response.elevGain);
-        setActivities(response.athletes);
-      } else {
-        setError(true);
-      }
+      const elevGain = await getElevationGainForDate(currentDate);
+      const rides = await getActivitiesByDate(currentDate);
+
+      setActivities(rides.topRides);
+      setNumberOfActivities(rides.totalActivities);
+      setElevationGain(elevGain);
     };
 
-    if (!activities || activities.length === 0) {
-      fetchActivities();
-    }
+    fetchActivities();
   }, []);
 
-  if (error) {
-    return (
-      <Container
-        sx={{
-          mt: 20,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <Typography variant="h3"> CHECK BACK SEP_22</Typography>
-        <Box
-          component="img"
-          sx={{
-            width: 250,
-            mt: 10,
-          }}
-          alt="The house from the offer."
-          src="/Maap_logo.png"
-        />
-      </Container>
-    );
-  }
-  if (!activities || (activities && activities.length <= 0)) {
-    return <Container sx={{ mt: 40 }}> LOADING</Container>;
+  if (!activities) {
+    return <h1> loading </h1>;
   }
   return (
     <ThemeProvider theme={theme}>
@@ -124,16 +108,17 @@ function HomePage() {
             </Typography>
             <Typography style={{ fontSize: 14 }}> presented by MAAP</Typography>
           </Box>
-          <Typography variant="h2">
+          <span style={{ fontSize: 16, color: "black" }}>
+            {numberOfActivities} RIDES TODAY
+          </span>
+          <Typography variant="h2" fontSize={50}>
             {}
-            <span style={{ fontSize: 20 }}> TOTAL </span>
-            <br />
-            {totalElevationGain.toLocaleString()} FT
+            {elevationGain.toLocaleString()} FT
           </Typography>
+          <Box mb={3}>
+            <Typography variant="h5">LEADERBOARD</Typography>
+          </Box>
 
-          <Typography variant="h5" gutterBottom sx={{ marginBottom: 2 }}>
-            LEADERBOARD
-          </Typography>
           <Box
             sx={{
               display: "flex",
@@ -160,6 +145,12 @@ function HomePage() {
                     style={{ fontSize: 20 }}
                   >
                     {activity.athleteName}
+                  </Typography>
+                  <Typography
+                    style={{ fontSize: 12, fontWeight: 700 }}
+                    gutterBottom
+                  >
+                    {activity.activityName}
                   </Typography>
                   <Typography
                     variant="body2"
@@ -206,18 +197,15 @@ const App = () => {
   const [currentInput, setCurrentInput] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  // Use effect to update authentication state
   useEffect(() => {
     if (currentInput === password) {
       setIsAuthenticated(true);
     }
-  }, [currentInput]); // Run effect only when `currentInput` changes
+  }, [currentInput]);
 
-  // Only render HomePage once authentication is successful
   if (isAuthenticated) {
     return <HomePage />;
   }
-
   return (
     <Container sx={{ mt: 30 }}>
       <Typography variant="h4" sx={{ color: "white" }}>

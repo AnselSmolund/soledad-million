@@ -1,108 +1,46 @@
-const STRAVA_CLUB_ID = "soledad-million";
+import { collection, doc, getDocs, getDoc } from "firebase/firestore";
 
-const clientId = process.env.REACT_APP_STRAVA_CLIENT_ID;
-const clientSecret = process.env.REACT_APP_STRAVA_CLIENT_SECRET;
-const refreshToken = process.env.REACT_APP_STRAVA_REFRESH_TOKEN;
+import db from "./firestoreService";
 
-export const getNewAccessToken = async () => {
-  const response = await fetch("https://www.strava.com/oauth/token", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      client_id: clientId,
-      client_secret: clientSecret,
-      grant_type: "refresh_token",
-      refresh_token: refreshToken,
-    }),
-  });
+export const getActivitiesByDate = async (date) => {
+  try {
+    const ridesCollectionRef = collection(db, "activities", date, "rides");
+    const ridesSnapshot = await getDocs(ridesCollectionRef);
 
-  const data = await response.json();
-  if (response.ok) {
-    const { access_token, expires_at } = data;
+    if (ridesSnapshot.empty) {
+      console.log(`No activities found for the date: ${date}`);
+      return [];
+    }
 
-    localStorage.setItem("access_token", access_token);
-    localStorage.setItem("expires_at", expires_at);
+    const activities = ridesSnapshot.docs.map((doc) => doc.data());
 
-    return access_token;
-  } else {
-    console.error("Failed to refresh token:", data);
+    const topRides = activities
+      .sort((a, b) => b.elevationGain - a.elevationGain)
+      .slice(0, 10);
+
+    console.log(`Activities for date ${date}:`, activities);
+    return { topRides, totalActivities: activities.length };
+  } catch (error) {
+    console.error("Error retrieving activities:", error);
   }
 };
 
-async function checkAndRefreshToken() {
-  let accessToken = localStorage.getItem("access_token");
-  const expiresAt = localStorage.getItem("expires_at");
-  const currentTime = Math.floor(Date.now() / 1000);
-
-  if (!accessToken || (expiresAt && currentTime >= expiresAt)) {
-    accessToken = await getNewAccessToken();
-  }
-
-  return accessToken;
-}
-
-export const getStuff = async () => {
-  const accessToken = await checkAndRefreshToken();
-
-  const url = `https://www.strava.com/api/v3/clubs/${STRAVA_CLUB_ID}/activities?per_page=200`;
-
+export const getElevationGainForDate = async (date) => {
   try {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${accessToken}`,
-      },
-    });
+    const elevationDocRef = doc(db, "dailyElevationGain", date);
+    const elevationSnapshot = await getDoc(elevationDocRef);
 
-    if (!response.ok) {
-      throw new Error(
-        `Error fetching Strava activities: ${response.statusText}`
-      );
+    if (elevationSnapshot.exists()) {
+      const elevationData = elevationSnapshot.data();
+      const totalElevationGain = elevationData.totalElevationGain || 0;
+
+      console.log(`Total elevation gain for ${date}: ${totalElevationGain}`);
+      return totalElevationGain;
+    } else {
+      console.log(`No elevation data found for date: ${date}`);
+      return 0;
     }
-
-    const activities = await response.json();
-
-    const activitiesByAthlete = {};
-
-    activities.forEach((activity) => {
-      const athleteName = `${activity.athlete.firstname} ${activity.athlete.lastname}`;
-      if (activity.type !== "Ride") {
-        return;
-      }
-      if (!activitiesByAthlete[athleteName]) {
-        activitiesByAthlete[athleteName] = activity;
-      }
-    });
-
-    const result = Object.values(activitiesByAthlete).map((activity) => ({
-      athleteName: `${activity.athlete.firstname} ${activity.athlete.lastname}`,
-      activityName: activity.name,
-      elevationGain: Math.ceil(activity.total_elevation_gain * 3.28),
-      distance: Math.ceil(activity.distance * 0.000621371),
-      elapsedTime: Math.ceil(activity.elapsed_time / 60),
-    }));
-
-    const totalElevationGain = result.reduce(
-      (acc, curr) => acc + curr.elevationGain,
-      0
-    );
-
-    const sortedResults = result.sort(
-      (a, b) => b.elevationGain - a.elevationGain
-    );
-
-    return {
-      statusCode: 200,
-      elevGain: Math.ceil(totalElevationGain),
-      athletes: sortedResults,
-    };
   } catch (error) {
-    console.error("Error fetching Strava activities:", error);
-    return {
-      statusCode: 500,
-      body: JSON.stringify({ error: "Failed to fetch Strava activities" }),
-    };
+    console.error("Error retrieving total elevation gain:", error);
   }
 };
