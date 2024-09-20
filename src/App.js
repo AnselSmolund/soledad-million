@@ -61,7 +61,7 @@ function HomePage() {
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
-          paddingTop: 10,
+          paddingTop: 4,
           paddingBottom: 20,
           backgroundColor: SECONDARY_COLOR,
           justifyContent: "space-between",
@@ -70,8 +70,12 @@ function HomePage() {
       >
         <Box>
           <Typography variant="h4" style={{ color: "black" }}>
+            <Box sx={{ mt: 0 }}>
+              <img src="/equinox_logo.png" alt="maap logo" width="100" />
+            </Box>
             {"SOLEDAD MILLION CHALLENGE"}
           </Typography>
+
           <Box
             sx={{
               display: "flex",
@@ -79,7 +83,7 @@ function HomePage() {
               alignContent: "center",
               justifyContent: "center",
               gap: 2,
-              mt: 2,
+              mt: 1,
             }}
           >
             <Typography style={{ fontSize: 14 }} mt={0.5}>
@@ -90,7 +94,8 @@ function HomePage() {
             </Box>
           </Box>
         </Box>
-        <Box>
+
+        <Box sx={{ flex: 10, mt: 10 }}>
           <Typography
             variant="h3"
             sx={{ color: MAIN_COLOR, textAlign: "center", fontSize: "20vw" }}
@@ -98,6 +103,7 @@ function HomePage() {
             {elevationGain.toLocaleString()}'
           </Typography>
         </Box>
+
         <Box>
           <Button sx={{ color: MAIN_COLOR }} onClick={handleNavigate}>
             View Leaderboard
