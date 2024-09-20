@@ -86,11 +86,7 @@ function HomePage() {
               presented by{" "}
             </Typography>
             <Box sx={{ mb: 2 }}>
-              <img
-                src="/Maap_logo.png"
-                alt="Description of the image"
-                width="100"
-              />
+              <img src="/Maap_logo.png" alt="maap logo" width="100" />
             </Box>
           </Box>
         </Box>
