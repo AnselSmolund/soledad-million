@@ -1,3 +1,17 @@
+
+@font-face {
+  font-family: 'Everett';
+  src: url('./fonts/everett.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Everett', Arial, sans-serif;
+  text-transform: uppercase;
+}
+
+
 .App {
   text-align: center;
 }
@@ -12,6 +26,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 
 .App-header {
   background-color: #282c34;
