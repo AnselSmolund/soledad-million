@@ -40,7 +40,7 @@ export const PasswordScreen = () => {
       }}
     >
       <Container maxWidth="sm">
-        <Typography variant="h4" sx={{ mb: 3, mt: 20 }}>
+        <Typography variant="h5" sx={{ mb: 3 }}>
           Enter Password to View Leaderboard
         </Typography>
 
