@@ -43,6 +43,7 @@ function HomePage() {
           position: "absolute",
           bottom: 0,
           opacity: 0.3,
+          overflow: "hidden",
         }}
       />
 
@@ -57,6 +58,7 @@ function HomePage() {
           paddingBottom: 20,
           backgroundColor: SECONDARY_COLOR,
           justifyContent: "space-between",
+          overflow: "hidden",
         }}
       >
         <Box>
