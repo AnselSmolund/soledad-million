@@ -80,7 +80,7 @@ export const Leaderboard = () => {
     <Box
       sx={{
         backgroundColor: SECONDARY_COLOR,
-        padding: 5,
+        paddingTop: 5,
         height: "100%",
         minHeight: "100vh",
       }}
