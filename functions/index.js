@@ -23,13 +23,33 @@ exports.storeActivitiesCron = functions.pubsub
     return null;
   });
 
+const getCurrentDateInPST = () => {
+  const todaysDate = new Date().toLocaleString("en-US", {
+    timeZone: "America/Los_Angeles",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+
+  // Convert the localized date to the YYYYMMDD format
+  const [month, day, year] = todaysDate.split("/");
+  return `${year}${month}${day}`;
+};
+
 const storeActivities = async (activities) => {
   const batch = db.batch();
-  let todaysDate = new Date();
 
-  let currentDate = `${todaysDate.getFullYear()}${(todaysDate.getMonth() + 1)
-    .toString()
-    .padStart(2, "0")}${todaysDate.getDate().toString().padStart(2, "0")}`;
+  const currentDate = getCurrentDateInPST();
+
+  const activityIdsDocRef = db.collection("activities").doc("allActivityIds");
+
+  // Step 1: Fetch existing activity IDs
+  let existingActivityIds = [];
+  const activityIdsSnapshot = await activityIdsDocRef.get();
+
+  if (activityIdsSnapshot.exists) {
+    existingActivityIds = activityIdsSnapshot.data().ids || [];
+  }
 
   const dateDocRef = db.collection("activities").doc(currentDate);
 
@@ -45,6 +65,9 @@ const storeActivities = async (activities) => {
     .filter((activity) => activity.type === "Ride")
     .map(async (activity) => {
       const elevationGain = Math.ceil(activity.total_elevation_gain * 3.28);
+      const activityId = `${activity.athlete.firstname}${Math.ceil(
+        activity.distance
+      )}${Math.ceil(activity.elapsed_time)}`;
 
       const activityData = {
         athleteName: `${activity.athlete.firstname} ${activity.athlete.lastname}`,
@@ -52,30 +75,32 @@ const storeActivities = async (activities) => {
         elevationGain: elevationGain,
         distance: Math.ceil(activity.distance * 0.000621371),
         elapsedTime: Math.ceil(activity.elapsed_time / 60),
-        id: `${Math.ceil(activity.distance)}${Math.ceil(
-          activity.elapsed_time
-        )}${elevationGain}`,
+        id: activityId,
+        date: currentDate,
       };
 
-      const activityId = activityData.id;
-
-      const activityDocRef = dateDocRef.collection("rides").doc(activityId);
-      const docSnapshot = await activityDocRef.get();
-
-      // If activity does not exist, add it to the batch
-      if (!docSnapshot.exists) {
-        console.log("Activity does not exist, adding:", activityData);
-        batch.set(activityDocRef, activityData);
-        totalElevationGain += elevationGain; // Add elevation gain for this new activity
+      if (existingActivityIds.includes(activityId)) {
+        console.log(`Activity with ID ${activityId} already exists, skipping.`);
+        return;
       }
+
+      console.log("Adding new activity:", activityData);
+      const activityDocRef = dateDocRef.collection("rides").doc(activityId);
+      batch.set(activityDocRef, activityData);
+
+      totalElevationGain += elevationGain;
+      existingActivityIds.push(activityId);
     });
 
   try {
     await Promise.all(activityPromises);
+
     await batch.commit();
     console.log("Batch commit successful");
 
-    // Update the total elevation gain for the current date
+    await activityIdsDocRef.set({ ids: existingActivityIds }, { merge: true });
+    console.log("Activity IDs updated.");
+
     await elevationGainRef.set({ totalElevationGain }, { merge: true });
     console.log("Elevation gain updated for date:", currentDate);
   } catch (error) {

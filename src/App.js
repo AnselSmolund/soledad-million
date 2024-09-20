@@ -1,226 +1,114 @@
+import "./App.css";
 import React, { useState, useEffect } from "react";
 import {
-  Card,
-  CardContent,
   Typography,
   Box,
-  Container,
   CssBaseline,
-  TextField,
+  Button,
+  LinearProgress,
 } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { getElevationGainForDate } from "./get-strava-activities";
 import {
-  getActivitiesByDate,
-  getElevationGainForDate,
-} from "./get-strava-activities";
-
-const theme = createTheme({
-  typography: {
-    h1: {
-      fontSize: "2rem",
-      fontWeight: 700,
-      textAlign: "center",
-      color: "#FFFFFF",
-    },
-    h2: {
-      fontSize: "2rem",
-      fontWeight: 600,
-      textAlign: "center",
-      color: "#FF6F61",
-      marginBottom: "2rem",
-    },
-    body2: {
-      fontSize: "1rem",
-    },
-  },
-  components: {
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          borderRadius: 16,
-          boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
-        },
-      },
-    },
-  },
-});
-
-let todaysDate = new Date();
-
-let currentDate = `${todaysDate.getFullYear()}${(todaysDate.getMonth() + 1)
-  .toLocaleString("en-US", {
-    timeZone: "America/Los_Angeles",
-  })
-  .padStart(2, "0")}${todaysDate.getDate().toString().padStart(2, "0")}`;
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
+import { Leaderboard, PasswordScreen } from "./Leaderboard";
+import { MAIN_COLOR, SECONDARY_COLOR, getCurrentDateInPST } from "./util";
 
 function HomePage() {
-  const [activities, setActivities] = useState(undefined);
-  const [numberOfActivities, setNumberOfActivities] = useState(undefined);
   const [elevationGain, setElevationGain] = useState(0);
 
+  const navigate = useNavigate();
+
+  const currentDate = getCurrentDateInPST();
   useEffect(() => {
     const fetchActivities = async () => {
       const elevGain = await getElevationGainForDate(currentDate);
-      const rides = await getActivitiesByDate(currentDate);
-
-      setActivities(rides.topRides);
-      setNumberOfActivities(rides.totalActivities);
       setElevationGain(elevGain);
     };
 
     fetchActivities();
   }, []);
 
-  if (!activities) {
-    return <h1> loading </h1>;
-  }
+  const handleNavigate = () => {
+    navigate("/almost-there");
+  };
+
+  const progressHeight = (elevationGain / 1000000) * 100;
+  console.log(elevationGain);
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {/* Full-screen container with background image */}
+    <>
+      <Box
+        sx={{
+          height: `${progressHeight}vh`,
+          width: "100vw",
+          backgroundColor: "black",
+          position: "absolute",
+          bottom: 0,
+          opacity: 0.3,
+        }}
+      />
+
       <Box
         sx={{
           minHeight: "100vh", // Full viewport height
           width: "100%", // Full width
-          backgroundImage: `url('/bg-img.jpg')`, // Reference your image from the public folder
-          backgroundSize: "fill",
-          backgroundPosition: "center",
-          backgroundRepeat: "repeat",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           flexDirection: "column",
-          padding: 4,
+          paddingTop: 10,
+          paddingBottom: 20,
+          backgroundColor: SECONDARY_COLOR,
+          justifyContent: "space-between",
         }}
       >
-        <Container
-          maxWidth="md"
-          sx={{
-            textAlign: "center",
-            backgroundColor: "rgba(255, 255, 255, 0.8)", // Semi-transparent background for content
-            borderRadius: 2,
-            padding: 4,
-          }}
-        >
-          <Box sx={{ mb: 4 }}>
-            <Typography variant="h1" style={{ color: "black" }}>
-              {"SOLEDAD MILLION CHALLENGE"}
-            </Typography>
-            <Typography style={{ fontSize: 14 }}> presented by MAAP</Typography>
-          </Box>
-          <span style={{ fontSize: 16, color: "black" }}>
-            {numberOfActivities} RIDES TODAY
-          </span>
-          <Typography variant="h2" fontSize={50}>
-            {}
-            {elevationGain.toLocaleString()} FT
+        <Box>
+          <Typography variant="h4" style={{ color: "black" }}>
+            {"SOLEDAD MILLION CHALLENGE"}
           </Typography>
-          <Box mb={3}>
-            <Typography variant="h5">LEADERBOARD</Typography>
-          </Box>
-
-          <Box
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 3,
-              justifyContent: "center",
-            }}
+          <Typography style={{ fontSize: 14 }}> presented by MAAP</Typography>
+        </Box>
+        <Box>
+          <Typography
+            variant="h3"
+            sx={{ color: MAIN_COLOR, textAlign: "center", fontSize: "20vw" }}
           >
-            {activities.map((activity, index) => (
-              <Card
-                key={index}
-                sx={{
-                  minWidth: 275,
-                  maxWidth: 300,
-                  marginBottom: 2,
-                  backgroundColor: "#f5f5f5",
-                }}
-              >
-                <CardContent>
-                  <Typography
-                    variant="h2"
-                    component="div"
-                    gutterBottom
-                    style={{ fontSize: 20 }}
-                  >
-                    {activity.athleteName}
-                  </Typography>
-                  <Typography
-                    style={{ fontSize: 12, fontWeight: 700 }}
-                    gutterBottom
-                  >
-                    {activity.activityName}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    gutterBottom
-                  >
-                    Elev:{" "}
-                    <span style={{ fontWeight: 700 }}>
-                      {activity.elevationGain.toLocaleString()} ft
-                    </span>
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    gutterBottom
-                  >
-                    Distance:{" "}
-                    <span style={{ fontWeight: 700 }}>
-                      {activity.distance} miles
-                    </span>
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="text.secondary"
-                    gutterBottom
-                  >
-                    Elapsed Time:{" "}
-                    <span style={{ fontWeight: 700 }}>
-                      {activity.elapsedTime} minutes
-                    </span>
-                  </Typography>
-                </CardContent>
-              </Card>
-            ))}
-          </Box>
-        </Container>
+            {elevationGain.toLocaleString()}'
+          </Typography>
+        </Box>
+        <Box>
+          <Button sx={{ color: MAIN_COLOR }} onClick={handleNavigate}>
+            View Leaderboard
+          </Button>
+        </Box>
       </Box>
-    </ThemeProvider>
+    </>
   );
 }
 
-const password = "maap";
+const theme = createTheme({
+  typography: {
+    fontFamily: "Everett, Arial, sans-serif",
+  },
+});
+
 const App = () => {
-  const [currentInput, setCurrentInput] = useState("");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(() => {
-    if (currentInput === password) {
-      setIsAuthenticated(true);
-    }
-  }, [currentInput]);
-
-  if (isAuthenticated) {
-    return <HomePage />;
-  }
   return (
-    <Container sx={{ mt: 30 }}>
-      <Typography variant="h4" sx={{ color: "white" }}>
-        {"SOLEDAD MILLION CHALLENGE"}
-      </Typography>
-      <Typography variant="h6" sx={{ color: "black", mb: 10 }}>
-        enter password to continue
-      </Typography>
-      <TextField
-        value={currentInput}
-        onChange={(val) => {
-          setCurrentInput(val.currentTarget.value);
-        }}
-      ></TextField>
-    </Container>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+          <Route path="/almost-there" element={<PasswordScreen />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 };
 
