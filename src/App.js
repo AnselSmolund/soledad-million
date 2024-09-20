@@ -95,10 +95,10 @@ function HomePage() {
           </Box>
         </Box>
 
-        <Box sx={{ flex: 10, mt: 10 }}>
+        <Box sx={{ bottom: 80, position: "relative" }}>
           <Typography
             variant="h3"
-            sx={{ color: MAIN_COLOR, textAlign: "center", fontSize: "20vw" }}
+            sx={{ color: MAIN_COLOR, textAlign: "center", fontSize: "19vw" }}
           >
             {elevationGain.toLocaleString()}'
           </Typography>
