@@ -1,12 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import {
-  Typography,
-  Box,
-  CssBaseline,
-  Button,
-  LinearProgress,
-} from "@mui/material";
+import { Typography, Box, CssBaseline, Button } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { getElevationGainForDate } from "./get-strava-activities";
 import {
@@ -31,7 +25,7 @@ function HomePage() {
     };
 
     fetchActivities();
-  }, []);
+  }, [currentDate]);
 
   const handleNavigate = () => {
     navigate("/almost-there");
@@ -58,7 +52,6 @@ function HomePage() {
           width: "100%", // Full width
           display: "flex",
           alignItems: "center",
-          justifyContent: "center",
           flexDirection: "column",
           paddingTop: 10,
           paddingBottom: 20,

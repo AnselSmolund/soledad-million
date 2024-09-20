@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { getCurrentDateInPST, MAIN_COLOR, SECONDARY_COLOR } from "./util";
-import { getActivitiesByDate, fakeRideData } from "./get-strava-activities";
+import { getActivitiesByDate } from "./get-strava-activities";
 
 const correctPassword = "maap";
 
@@ -69,12 +69,13 @@ export const Leaderboard = () => {
 
   useEffect(() => {
     const fetchActivities = async () => {
+      console.log("fetching");
       const rides = await getActivitiesByDate(currentDate);
       setActivities(rides.topRides);
     };
 
     fetchActivities();
-  }, []);
+  }, [currentDate]);
 
   return (
     <Box
