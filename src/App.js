@@ -69,33 +69,41 @@ function HomePage() {
         }}
       >
         <Box>
-          <Typography variant="h4" style={{ color: "black" }}>
-            <Box sx={{ mt: 0 }}>
-              <img src="/equinox_logo.png" alt="maap logo" width="100" />
-            </Box>
-            {"SOLEDAD MILLION CHALLENGE"}
-          </Typography>
-
+          <Box sx={{ mt: 0 }}>
+            <img src="/equinox_logo.png" alt="maap logo" width="100" />
+          </Box>
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: "column",
               alignContent: "center",
               justifyContent: "center",
-              gap: 2,
+              gap: 1,
               mt: 1,
             }}
           >
-            <Typography style={{ fontSize: 14 }} mt={0.5}>
-              presented by{" "}
+            <Typography variant="h4" style={{ color: "black", fontSize: 20 }}>
+              {"SOLEDAD MILLION CHALLENGE"}
             </Typography>
-            <Box sx={{ mb: 2 }}>
-              <img src="/Maap_logo.png" alt="maap logo" width="100" />
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                gap: 2,
+              }}
+            >
+              <Typography style={{ fontSize: 14 }} mt={0.5}>
+                presented by
+              </Typography>
+              <Box sx={{ mb: 2 }}>
+                <img src="/Maap_logo.png" alt="maap logo" width="100" />
+              </Box>
             </Box>
           </Box>
         </Box>
 
-        <Box sx={{ bottom: 80, position: "relative" }}>
+        <Box sx={{ bottom: 40, position: "relative" }}>
           <Typography
             variant="h3"
             sx={{ color: MAIN_COLOR, textAlign: "center", fontSize: "19vw" }}
