@@ -25,6 +25,13 @@ function HomePage() {
     };
 
     fetchActivities();
+
+    document.body.style.overflow = "hidden";
+
+    // Enable scrolling on unmount
+    return () => {
+      document.body.style.overflow = "auto";
+    };
   }, [currentDate]);
 
   const handleNavigate = () => {
@@ -37,7 +44,7 @@ function HomePage() {
     <>
       <Box
         sx={{
-          height: `${progressHeight}vh`,
+          height: `${progressHeight}dvh`,
           width: "100vw",
           backgroundColor: "black",
           position: "absolute",
@@ -49,7 +56,7 @@ function HomePage() {
 
       <Box
         sx={{
-          minHeight: "100vh", // Full viewport height
+          height: "100dvh", // Full viewport height
           width: "100%", // Full width
           display: "flex",
           alignItems: "center",
