@@ -46,10 +46,10 @@ function HomePage() {
         sx={{
           height: `${progressHeight}dvh`,
           width: "100vw",
-          backgroundColor: "black",
+          backgroundColor: "white",
           position: "absolute",
           bottom: 0,
-          opacity: 0.3,
+          opacity: 0.2,
           overflow: "hidden",
         }}
       />
@@ -72,7 +72,27 @@ function HomePage() {
           <Typography variant="h4" style={{ color: "black" }}>
             {"SOLEDAD MILLION CHALLENGE"}
           </Typography>
-          <Typography style={{ fontSize: 14 }}> presented by MAAP</Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              alignContent: "center",
+              justifyContent: "center",
+              gap: 2,
+              mt: 2,
+            }}
+          >
+            <Typography style={{ fontSize: 14 }} mt={0.5}>
+              presented by{" "}
+            </Typography>
+            <Box sx={{ mb: 2 }}>
+              <img
+                src="/Maap_logo.png"
+                alt="Description of the image"
+                width="100"
+              />
+            </Box>
+          </Box>
         </Box>
         <Box>
           <Typography

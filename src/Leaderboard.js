@@ -33,7 +33,6 @@ export const PasswordScreen = () => {
         width: "100%", // Full width
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
         flexDirection: "column",
         padding: 4,
         color: MAIN_COLOR,
@@ -41,7 +40,7 @@ export const PasswordScreen = () => {
       }}
     >
       <Container maxWidth="sm">
-        <Typography variant="h4" sx={{ mb: 3 }}>
+        <Typography variant="h4" sx={{ mb: 3, mt: 20 }}>
           Enter Password to View Leaderboard
         </Typography>
 
