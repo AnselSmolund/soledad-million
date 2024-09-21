@@ -12,15 +12,19 @@ import {
 import { Leaderboard, PasswordScreen } from "./Leaderboard";
 import { MAIN_COLOR, SECONDARY_COLOR, getCurrentDateInPST } from "./util";
 
+export const SEP_22 = "20240922";
+
 function HomePage() {
   const [elevationGain, setElevationGain] = useState(0);
 
   const navigate = useNavigate();
 
   const currentDate = getCurrentDateInPST();
+
   useEffect(() => {
     const fetchActivities = async () => {
-      const elevGain = await getElevationGainForDate(currentDate);
+      const elevGain = await getElevationGainForDate(SEP_22);
+      console.log(currentDate);
       setElevationGain(elevGain);
     };
 
@@ -39,7 +43,7 @@ function HomePage() {
   };
 
   const progressHeight = (elevationGain / 1000000) * 100;
-  console.log(elevationGain);
+
   return (
     <>
       <Box
@@ -69,9 +73,6 @@ function HomePage() {
         }}
       >
         <Box>
-          <Box sx={{ mt: 0 }}>
-            <img src="/equinox_logo.png" alt="maap logo" width="100" />
-          </Box>
           <Box
             sx={{
               display: "flex",
@@ -82,7 +83,30 @@ function HomePage() {
               mt: 1,
             }}
           >
-            <Typography variant="h4" style={{ color: "black", fontSize: 20 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                gap: 1,
+              }}
+            >
+              <Box sx={{ mt: 0 }}>
+                <img src="/equinox_logo.png" alt="maap logo" width="80" />
+              </Box>
+              <Box sx={{ mt: 0 }}>
+                <img src="/1.png" alt="best logo" width="80" />
+              </Box>
+            </Box>
+            <Typography
+              variant="h3"
+              style={{
+                color: "black",
+                fontSize: 30,
+                letterSpacing: "-1px",
+                lineHeight: "30px",
+              }}
+            >
               {"SOLEDAD MILLION CHALLENGE"}
             </Typography>
             <Box
@@ -103,10 +127,10 @@ function HomePage() {
           </Box>
         </Box>
 
-        <Box sx={{ bottom: 40, position: "relative" }}>
+        <Box sx={{ bottom: 40, position: "relative", color: MAIN_COLOR }}>
           <Typography
             variant="h3"
-            sx={{ color: MAIN_COLOR, textAlign: "center", fontSize: "19vw" }}
+            sx={{ textAlign: "center", fontSize: "19vw" }}
           >
             {elevationGain.toLocaleString()}'
           </Typography>

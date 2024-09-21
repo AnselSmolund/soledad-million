@@ -12,6 +12,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { getCurrentDateInPST, MAIN_COLOR, SECONDARY_COLOR } from "./util";
 import { getActivitiesByDate } from "./get-strava-activities";
+import { SEP_22 } from "./App";
 
 const correctPassword = "maap";
 
@@ -69,7 +70,8 @@ export const Leaderboard = () => {
   useEffect(() => {
     const fetchActivities = async () => {
       console.log("fetching");
-      const rides = await getActivitiesByDate(currentDate);
+      const rides = await getActivitiesByDate(SEP_22);
+      console.log(rides);
       setActivities(rides.topRides);
     };
 
@@ -89,11 +91,11 @@ export const Leaderboard = () => {
         LEADERBOARD
       </Typography>
       <Typography variant="h5" color={MAIN_COLOR} mb={7}>
-        {activities.length} rides today
+        {activities?.length ?? 0} rides today
       </Typography>
 
       <Grid2 justifyContent={"center"} container spacing={3}>
-        {activities.map((activity, index) => (
+        {activities?.map((activity, index) => (
           <Card
             key={index}
             sx={{

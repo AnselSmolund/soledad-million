@@ -18,8 +18,7 @@ export const getCurrentDateLabelForView = () => {
   const today = new Date();
   const formattedDate = today.toLocaleDateString("en-US", {
     timeZone: "America/Los_Angeles",
-    year: "numeric",
-    month: "2-digit",
+    month: "short",
     day: "2-digit",
   });
 
