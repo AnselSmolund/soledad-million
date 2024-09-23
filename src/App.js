@@ -124,6 +124,14 @@ function HomePage() {
           </Typography>
         </Box>
 
+        <Box sx={{ bottom: 40, position: "relative", color: MAIN_COLOR }}>
+          <Typography
+            variant="h3"
+            sx={{ textAlign: "center", fontSize: "30px" }}
+          >
+            we did it 🥹
+          </Typography>
+        </Box>
         <Box>
           <Button sx={{ color: MAIN_COLOR }} onClick={handleNavigate}>
             View Leaderboard
