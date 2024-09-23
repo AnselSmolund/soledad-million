@@ -48,18 +48,6 @@ function HomePage() {
     <>
       <Box
         sx={{
-          height: `${progressHeight}dvh`,
-          width: "100vw",
-          backgroundColor: "white",
-          position: "absolute",
-          bottom: 0,
-          opacity: 0.2,
-          overflow: "hidden",
-        }}
-      />
-
-      <Box
-        sx={{
           height: "100dvh", // Full viewport height
           width: "100%", // Full width
           display: "flex",
