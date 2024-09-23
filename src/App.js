@@ -42,8 +42,6 @@ function HomePage() {
     navigate("/almost-there");
   };
 
-  const progressHeight = (elevationGain / 1000000) * 100;
-
   return (
     <>
       <Box
