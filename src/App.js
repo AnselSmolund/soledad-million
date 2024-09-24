@@ -2,11 +2,7 @@ import "./App.css";
 import React, { useEffect } from "react";
 import { Typography, Box, CssBaseline, Button } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import {
-  calculateRankings,
-  sep22Data,
-  SEP22ELEVATION,
-} from "./get-strava-activities";
+import { SEP22ELEVATION } from "./get-strava-activities";
 import {
   BrowserRouter as Router,
   Routes,
