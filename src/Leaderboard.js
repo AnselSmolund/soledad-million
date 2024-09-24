@@ -228,7 +228,7 @@ export const Leaderboard = () => {
               </Typography>
               <Typography
                 variant="subtitle1"
-                sx={{ fontSize: 12, fontWeight: 700, color: MAIN_COLOR }}
+                sx={{ fontSize: 13, fontWeight: 700, color: MAIN_COLOR }}
               >
                 {activity.activityName}
               </Typography>
