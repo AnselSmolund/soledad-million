@@ -45,7 +45,7 @@ export const getElevationGainForDate = async (date) => {
   }
 };
 
-export const SEP22ELEVATION = 1390174;
+export const SEP22ELEVATION = 1424692;
 export const SEP22DISTANCE = 11241;
 export const SEP22ELAPSEDTIME = 65970;
 
@@ -482,6 +482,15 @@ export const sep22Data = [
     elapsedTime: 314,
     athleteName: "E F.",
     activityName: "Soledad million: my contribution",
+    date: "20240922",
+  },
+  {
+    id: "Moto9335518787",
+    elevationGain: 8517,
+    distance: 59,
+    elapsedTime: 269,
+    athleteName: "MotoDDS LJ D.",
+    activityName: "Morning Ride",
     date: "20240922",
   },
   {
@@ -1975,6 +1984,16 @@ export const sep22Data = [
     id: "Vlad175562814",
     distance: 11,
     athleteName: "Vlad P.",
+  },
+  {
+    athleteName: "Soup",
+    activityName: "Happy Birthday 🎉",
+    elapsedTime: 69,
+    elevationGain: 420,
+    date: "20240922",
+    distance: 27,
+    id: "SOUP",
+    url: "https://www.youtube.com/watch?v=KQLPL1qRhn8",
   },
   {
     elapsedTime: 49,

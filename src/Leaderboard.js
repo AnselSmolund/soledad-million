@@ -16,6 +16,7 @@ import { MAIN_COLOR, SECONDARY_COLOR } from "./util";
 import { sep22Data } from "./get-strava-activities";
 import ArrowUpward from "@mui/icons-material/ArrowUpward";
 import ArrowDownward from "@mui/icons-material/ArrowDownward";
+import { NavButton } from "./Shared/Button";
 
 const correctPassword = "maap";
 
@@ -75,6 +76,8 @@ export const Leaderboard = () => {
     dir: "dsc",
   });
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const newUpdatedList = [...sep22Data];
 
@@ -125,14 +128,20 @@ export const Leaderboard = () => {
     <Box
       sx={{
         backgroundColor: SECONDARY_COLOR,
-        paddingTop: 5,
+        paddingTop: 1,
         height: "100%",
         minHeight: "100vh",
         paddingBottom: 5,
       }}
     >
-      <Typography variant="h3" color={MAIN_COLOR} mb={3}>
-        LEADERBOARD
+      <NavButton
+        handleNavigate={() => {
+          navigate("/");
+        }}
+        text={"go back"}
+      />
+      <Typography variant="h4" color={MAIN_COLOR} mb={3}>
+        Leaderboard
       </Typography>
       <Box
         sx={{
@@ -197,6 +206,9 @@ export const Leaderboard = () => {
               borderRadius: 2,
               transition: "transform 0.3s ease",
             }}
+            onClick={() =>
+              activity.url ? window.open(activity.url) : undefined
+            }
           >
             <CardContent sx={{ textAlign: "center" }}>
               <Typography
