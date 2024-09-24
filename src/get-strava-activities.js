@@ -45,7 +45,7 @@ export const getElevationGainForDate = async (date) => {
   }
 };
 
-export const SEP22ELEVATION = 1452377;
+export const SEP22ELEVATION = 1456258;
 export const SEP22DISTANCE = 11241;
 export const SEP22ELAPSEDTIME = 65970;
 

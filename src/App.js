@@ -10,12 +10,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import { Leaderboard } from "./Leaderboard";
-import {
-  getTotalElevation,
-  MAIN_COLOR,
-  SECONDARY_COLOR,
-  THIRD_COLOR,
-} from "./util";
+import { MAIN_COLOR, SECONDARY_COLOR, THIRD_COLOR } from "./util";
 import { PhotoPage } from "./PhotoPage";
 import { Stats } from "./Stats";
 
