@@ -503,6 +503,15 @@ export const sep22Data = [
     elapsedTime: 298,
   },
   {
+    date: "20240922",
+    id: "TaitC9292",
+    distance: 71,
+    athleteName: "Tait C.",
+    activityName: "Soledaddy Million Challenge p/b MAAP",
+    elevationGain: 8209,
+    elapsedTime: 323,
+  },
+  {
     activityName: "Morning Ride",
     athleteName: "Jordi L.",
     date: "20240922",
@@ -952,6 +961,15 @@ export const sep22Data = [
     activityName: "Morning Ride",
     elapsedTime: 316,
     date: "20240922",
+  },
+  {
+    elapsedTime: 254,
+    elevationGain: 5338,
+    date: "20240922",
+    activityName: "Mt Soledad x 7",
+    distance: 46,
+    athleteName: "Ron F.",
+    id: "RonF5338",
   },
   {
     elapsedTime: 285,
@@ -1505,6 +1523,15 @@ export const sep22Data = [
     athleteName: "Fermin Robles S.",
     date: "20240922",
     elevationGain: 2411,
+  },
+  {
+    athleteName: "Michael Y.",
+    activityName: "Unknowingly became part of the Soledad Challenge!",
+    date: "20240922",
+    id: "Zackery5954510854",
+    elevationGain: 2369,
+    elapsedTime: 121,
+    distance: 32,
   },
   {
     athleteName: "Zackery S.",
