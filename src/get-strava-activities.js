@@ -138,7 +138,8 @@ export const sep22Data = [
     athleteName: "Adam S.",
     id: "Adam103109",
     distance: 122,
-    activityName: "If La Jolla could just pave a damn street..",
+    activityName:
+      "If La Jolla could just pave a damn street.. and if only I could join the right strava club this wouldve been up here long ago",
   },
   {
     athleteName: "Yee F.",
