@@ -14,6 +14,7 @@ export const getCurrentDateInPST = () => {
 export const MAIN_COLOR = "#E9FEB2";
 export const SECONDARY_COLOR = "#3C414E";
 
+export const THIRD_COLOR = "rgba(255,255,255,0.5)";
 export const getCurrentDateLabelForView = () => {
   const today = new Date();
   const formattedDate = today.toLocaleDateString("en-US", {

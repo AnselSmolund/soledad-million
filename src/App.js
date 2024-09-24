@@ -10,7 +10,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import { Leaderboard } from "./Leaderboard";
-import { MAIN_COLOR, SECONDARY_COLOR } from "./util";
+import { MAIN_COLOR, SECONDARY_COLOR, THIRD_COLOR } from "./util";
 import { PhotoPage } from "./PhotoPage";
 import { Stats } from "./Stats";
 
@@ -30,112 +30,66 @@ function HomePage() {
   };
 
   return (
-    <>
+    <Box
+      sx={{
+        height: "100dvh",
+        width: "100%",
+        display: "flex",
+        alignItems: "center",
+        flexDirection: "column",
+        backgroundColor: SECONDARY_COLOR,
+        overflow: "hidden",
+      }}
+    >
       <Box
         sx={{
-          height: "100dvh",
-          width: "100%",
           display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          paddingTop: 4,
-          paddingBottom: 20,
-          backgroundColor: SECONDARY_COLOR,
-          justifyContent: "space-between",
-          overflow: "hidden",
+          gap: 2,
+          mt: 3,
         }}
       >
-        <Box>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignContent: "center",
-              justifyContent: "center",
-              gap: 1,
-              mt: 1,
-            }}
-          >
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                gap: 1,
-              }}
-            >
-              <Box sx={{ mt: 0 }}>
-                <img src="/equinox_logo.png" alt="maap logo" width="80" />
-              </Box>
-              <Box sx={{ mt: 0 }}>
-                <img src="/1.png" alt="best logo" width="80" />
-              </Box>
-            </Box>
-            <Typography
-              variant="h3"
-              style={{
-                color: "black",
-                fontSize: 30,
-                letterSpacing: "-1px",
-                lineHeight: "30px",
-              }}
-            >
-              {"SOLEDAD MILLION CHALLENGE"}
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "center",
-                gap: 2,
-              }}
-            >
-              <Typography style={{ fontSize: 14 }} mt={0.5}>
-                presented by
-              </Typography>
-              <Box sx={{ mb: 2 }}>
-                <img src="/Maap_logo.png" alt="maap logo" width="100" />
-              </Box>
-            </Box>
-          </Box>
+        <Box sx={{ mb: 0 }}>
+          <img src="/1.png" alt="best logo" width="60" />
         </Box>
-
+        <Box sx={{ mt: 0 }}>
+          <img src="/2.png" alt="maap logo" width="100" />
+        </Box>
+        <Box sx={{ mb: 0 }}>
+          <img src="/equinox_logo.png" alt="best logo" width="65" />
+        </Box>
+      </Box>
+      <Box
+        sx={{
+          position: "relative",
+          color: MAIN_COLOR,
+          display: "flex",
+          flexDirection: "column",
+          gap: 4,
+          padding: 3,
+        }}
+      >
         <Box
           sx={{
-            bottom: 40,
             position: "relative",
-            color: MAIN_COLOR,
-            display: "flex",
-            flexDirection: "column",
-            gap: 4,
-            padding: 3,
+            color: THIRD_COLOR,
           }}
         >
-          <Box sx={{ position: "relative", color: MAIN_COLOR, mt: 5 }}>
-            <Typography variant="h3" sx={{ textAlign: "center", fontSize: 25 }}>
-              ON SEPTEMBER 22ND,{" "}
-              <span style={{ fontWeight: 700, fontSize: 30 }}>255 </span>{" "}
-              CYCLISTS CLIMBED A TOTAL OF
-            </Typography>
-          </Box>
-          <Typography
-            variant="h3"
-            sx={{ textAlign: "center", fontSize: "19vw" }}
-          >
-            {SEP22ELEVATION.toLocaleString()}'
-            <Box sx={{ position: "relative", color: MAIN_COLOR, mt: 0 }}>
-              <Typography
-                variant="h3"
-                sx={{ textAlign: "center", fontSize: "20px", mt: 3 }}
-              >
-                ON MT. SOLEDAD IN SAN DIEGO CA
-              </Typography>
-            </Box>
+          <Typography variant="h3" sx={{ textAlign: "center", fontSize: 27 }}>
+            ON SEPTEMBER 22, <br></br>
+            <span style={{ color: MAIN_COLOR }}>255</span> CYCLISTS CLIMBED A
+            TOTAL OF
           </Typography>
         </Box>
-        <NavButtons handleNavigate={handleNavigate} />
+        <Typography variant="h3" sx={{ textAlign: "center", fontSize: "19vw" }}>
+          {SEP22ELEVATION.toLocaleString()}'
+        </Typography>
+        <Typography sx={{ color: THIRD_COLOR, fontSize: "19px" }}>
+          ON MT SOLEDAD IN SAN DIEGO CA
+        </Typography>
       </Box>
-    </>
+
+      <NavButtons handleNavigate={handleNavigate} />
+    </Box>
   );
 }
 
@@ -144,9 +98,11 @@ const NavButtons = (props) => {
   return (
     <Box
       sx={{
+        position: "relative",
         display: "flex",
         flexDirection: { xs: "column", sm: "row" },
         gap: 2,
+        mt: 2,
       }}
     >
       <Box>
