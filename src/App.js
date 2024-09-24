@@ -1,53 +1,40 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Typography, Box, CssBaseline, Button } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { getElevationGainForDate } from "./get-strava-activities";
+import { SEP22ELEVATION } from "./get-strava-activities";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useNavigate,
 } from "react-router-dom";
-import { Leaderboard, PasswordScreen } from "./Leaderboard";
-import { MAIN_COLOR, SECONDARY_COLOR, getCurrentDateInPST } from "./util";
-
-export const SEP_22 = "20240922";
+import { Leaderboard } from "./Leaderboard";
+import { MAIN_COLOR, SECONDARY_COLOR } from "./util";
+import { PhotoPage } from "./PhotoPage";
+import { Stats } from "./Stats";
 
 function HomePage() {
-  const [elevationGain, setElevationGain] = useState(0);
-
   const navigate = useNavigate();
 
-  const currentDate = getCurrentDateInPST();
-
   useEffect(() => {
-    const fetchActivities = async () => {
-      const elevGain = await getElevationGainForDate(SEP_22);
-      console.log(currentDate);
-      setElevationGain(elevGain);
-    };
-
-    fetchActivities();
-
     document.body.style.overflow = "hidden";
 
-    // Enable scrolling on unmount
     return () => {
       document.body.style.overflow = "auto";
     };
-  }, [currentDate]);
+  }, []);
 
-  const handleNavigate = () => {
-    navigate("/almost-there");
+  const handleNavigate = (url) => {
+    navigate(url);
   };
 
   return (
     <>
       <Box
         sx={{
-          height: "100dvh", // Full viewport height
-          width: "100%", // Full width
+          height: "100dvh",
+          width: "100%",
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
@@ -113,36 +100,99 @@ function HomePage() {
           </Box>
         </Box>
 
-        <Box sx={{ bottom: 40, position: "relative", color: MAIN_COLOR }}>
+        <Box
+          sx={{
+            bottom: 40,
+            position: "relative",
+            color: MAIN_COLOR,
+            display: "flex",
+            flexDirection: "column",
+            gap: 4,
+            padding: 3,
+          }}
+        >
+          <Box sx={{ position: "relative", color: MAIN_COLOR, mt: 5 }}>
+            <Typography variant="h3" sx={{ textAlign: "center", fontSize: 25 }}>
+              ON SEPTEMBER 22ND,{" "}
+              <span style={{ fontWeight: 700, fontSize: 30 }}>255 </span>{" "}
+              CYCLISTS CLIMBED A TOTAL OF
+            </Typography>
+          </Box>
           <Typography
             variant="h3"
             sx={{ textAlign: "center", fontSize: "19vw" }}
           >
-            {elevationGain.toLocaleString()}'
+            {SEP22ELEVATION.toLocaleString()}'
+            <Box sx={{ position: "relative", color: MAIN_COLOR, mt: 0 }}>
+              <Typography
+                variant="h3"
+                sx={{ textAlign: "center", fontSize: "20px", mt: 3 }}
+              >
+                ON MT. SOLEDAD IN SAN DIEGO CA
+              </Typography>
+            </Box>
           </Typography>
         </Box>
-
-        <Box sx={{ bottom: 40, position: "relative", color: MAIN_COLOR }}>
-          <Typography
-            variant="h3"
-            sx={{ textAlign: "center", fontSize: "30px" }}
-          >
-            we did it 🥹
-          </Typography>
-        </Box>
-        <Box>
-          <Button sx={{ color: MAIN_COLOR }} onClick={handleNavigate}>
-            View Leaderboard
-          </Button>
-        </Box>
+        <NavButtons handleNavigate={handleNavigate} />
       </Box>
     </>
   );
 }
 
+const NavButtons = (props) => {
+  const { handleNavigate } = props;
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: { xs: "column", sm: "row" },
+        gap: 2,
+      }}
+    >
+      <Box>
+        <Button
+          size="large"
+          sx={{ color: MAIN_COLOR }}
+          onClick={() => handleNavigate("leaderboard")}
+        >
+          View Leaderboard
+        </Button>
+      </Box>
+      <Box>
+        <Button
+          size="large"
+          sx={{ color: MAIN_COLOR }}
+          onClick={() => handleNavigate("stats")}
+        >
+          See Stats
+        </Button>
+      </Box>
+      <Box>
+        <Button
+          size="large"
+          sx={{ color: MAIN_COLOR }}
+          onClick={() => handleNavigate("pictures")}
+        >
+          Photo Gallery
+        </Button>
+      </Box>
+    </Box>
+  );
+};
 const theme = createTheme({
   typography: {
     fontFamily: "Everett, Arial, sans-serif",
+  },
+  components: {
+    MuiToggleButton: {
+      styleOverrides: {
+        root: {
+          "&.Mui-selected": {
+            color: MAIN_COLOR,
+          },
+        },
+      },
+    },
   },
 });
 
@@ -155,7 +205,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
-          <Route path="/almost-there" element={<PasswordScreen />} />
+          <Route path="/pictures" element={<PhotoPage />} />
+          <Route path="/stats" element={<Stats />} />
         </Routes>
       </Router>
     </ThemeProvider>

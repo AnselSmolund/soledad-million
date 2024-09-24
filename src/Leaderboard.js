@@ -8,11 +8,14 @@ import {
   TextField,
   Button,
   Grid2,
+  ToggleButtonGroup,
+  ToggleButton,
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-import { getCurrentDateInPST, MAIN_COLOR, SECONDARY_COLOR } from "./util";
-import { getActivitiesByDate } from "./get-strava-activities";
-import { SEP_22 } from "./App";
+import { MAIN_COLOR, SECONDARY_COLOR } from "./util";
+import { sep22Data } from "./get-strava-activities";
+import ArrowUpward from "@mui/icons-material/ArrowUpward";
+import ArrowDownward from "@mui/icons-material/ArrowDownward";
 
 const correctPassword = "maap";
 
@@ -64,19 +67,49 @@ export const PasswordScreen = () => {
 };
 
 export const Leaderboard = () => {
-  const [activities, setActivities] = useState([]);
-  const currentDate = getCurrentDateInPST();
+  const [sortedResults, setSortedResults] = useState(sep22Data);
+
+  const [currentSort, setCurrentSort] = useState({
+    type: "elevation",
+    dir: "dsc",
+  });
 
   useEffect(() => {
-    const fetchActivities = async () => {
-      console.log("fetching");
-      const rides = await getActivitiesByDate(SEP_22);
-      console.log(rides);
-      setActivities(rides.topRides);
+    const newUpdatedList = [...sortedResults];
+
+    const sortFunction = (a, b) => {
+      const order = currentSort.dir === "asc" ? 1 : -1;
+      switch (currentSort.type) {
+        case "distance":
+          return (a.distance - b.distance) * order;
+        case "elevation":
+          return (a.elevationGain - b.elevationGain) * order;
+        case "name":
+          return a.athleteName.localeCompare(b.athleteName) * order;
+        case "elapsedTime":
+          return (a.elapsedTime - b.elapsedTime) * order;
+        default:
+          return 0;
+      }
     };
 
-    fetchActivities();
-  }, [currentDate]);
+    newUpdatedList.sort(sortFunction);
+    setSortedResults(newUpdatedList);
+  }, [currentSort]);
+
+  const handleSortToggle = (newSort) => {
+    if (newSort !== null) {
+      console.log(newSort);
+      if (currentSort.type === newSort) {
+        setCurrentSort((prev) => ({
+          ...prev,
+          dir: prev.dir === "asc" ? "dsc" : "asc",
+        }));
+      } else {
+        setCurrentSort({ type: newSort, dir: "dsc" });
+      }
+    }
+  };
 
   return (
     <Box
@@ -85,22 +118,26 @@ export const Leaderboard = () => {
         paddingTop: 5,
         height: "100%",
         minHeight: "100vh",
+        paddingBottom: 5,
       }}
     >
       <Typography variant="h3" color={MAIN_COLOR}>
         LEADERBOARD
       </Typography>
       <Typography variant="h5" color={MAIN_COLOR} mb={7}>
-        {activities?.length ?? 0} rides today
+        {sep22Data.length ?? 0} RIDES ON SEP 22
       </Typography>
-
+      <ToggleButtons
+        selectedType={currentSort.type}
+        handleSortToggle={handleSortToggle}
+        dir={currentSort.dir}
+      />
       <Grid2 justifyContent={"center"} container spacing={3}>
-        {activities?.map((activity, index) => (
+        {sortedResults.map((activity, index) => (
           <Card
             key={index}
             sx={{
-              minWidth: 275,
-              maxWidth: 300,
+              width: 260,
               padding: 2,
               backgroundColor: "#4f5d75",
               borderRadius: 2,
@@ -108,9 +145,6 @@ export const Leaderboard = () => {
             }}
           >
             <CardContent sx={{ textAlign: "center" }}>
-              <Typography gutterBottom sx={{ color: MAIN_COLOR, fontSize: 14 }}>
-                {`#${index + 1}`}
-              </Typography>
               <Typography
                 variant="h5"
                 component="div"
@@ -176,5 +210,42 @@ export const Leaderboard = () => {
         ))}
       </Grid2>
     </Box>
+  );
+};
+
+const ToggleButtons = (props) => {
+  const { selectedType, handleSortToggle, dir } = props;
+
+  return (
+    <ToggleButtonGroup
+      value={selectedType}
+      exclusive
+      sx={{ mb: 3 }}
+      size={"small"}
+    >
+      {["elevation", "distance", "name", "elapsed Time"].map((sortType) => (
+        <ToggleButton
+          key={sortType}
+          value={sortType}
+          aria-label={`sort by ${sortType}`}
+          selected={selectedType === sortType}
+          onClick={() => handleSortToggle(sortType)}
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            color: selectedType === sortType ? "#fff" : "#000",
+            backgroundColor:
+              selectedType === sortType ? "#007bff" : "transparent",
+          }}
+        >
+          {selectedType === sortType && dir === "asc" ? (
+            <ArrowUpward sx={{ marginRight: 0.5, fontSize: "16px" }} />
+          ) : selectedType === sortType && dir === "dsc" ? (
+            <ArrowDownward sx={{ marginRight: 0.5, fontSize: "16px" }} />
+          ) : null}
+          {sortType.charAt(0).toUpperCase() + sortType.slice(1)}
+        </ToggleButton>
+      ))}
+    </ToggleButtonGroup>
   );
 };
