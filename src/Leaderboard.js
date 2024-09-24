@@ -68,6 +68,7 @@ export const PasswordScreen = () => {
 
 export const Leaderboard = () => {
   const [sortedResults, setSortedResults] = useState(sep22Data);
+  const [searchText, setSearchText] = useState("");
 
   const [currentSort, setCurrentSort] = useState({
     type: "elevation",
@@ -75,7 +76,7 @@ export const Leaderboard = () => {
   });
 
   useEffect(() => {
-    const newUpdatedList = [...sortedResults];
+    const newUpdatedList = [...sep22Data];
 
     const sortFunction = (a, b) => {
       const order = currentSort.dir === "asc" ? 1 : -1;
@@ -85,7 +86,7 @@ export const Leaderboard = () => {
         case "elevation":
           return (a.elevationGain - b.elevationGain) * order;
         case "name":
-          return a.athleteName.localeCompare(b.athleteName) * order;
+          return b.athleteName.localeCompare(a.athleteName) * order;
         case "elapsedTime":
           return (a.elapsedTime - b.elapsedTime) * order;
         default:
@@ -95,11 +96,20 @@ export const Leaderboard = () => {
 
     newUpdatedList.sort(sortFunction);
     setSortedResults(newUpdatedList);
-  }, [currentSort]);
+  }, [currentSort, sep22Data]);
+
+  useEffect(() => {
+    const newUpdatedList = [...sep22Data].filter((text) => {
+      return text.athleteName
+        .toLocaleLowerCase()
+        .includes(searchText.toLocaleLowerCase());
+    });
+
+    setSortedResults(newUpdatedList);
+  }, [searchText]);
 
   const handleSortToggle = (newSort) => {
     if (newSort !== null) {
-      console.log(newSort);
       if (currentSort.type === newSort) {
         setCurrentSort((prev) => ({
           ...prev,
@@ -121,17 +131,61 @@ export const Leaderboard = () => {
         paddingBottom: 5,
       }}
     >
-      <Typography variant="h3" color={MAIN_COLOR}>
+      <Typography variant="h3" color={MAIN_COLOR} mb={3}>
         LEADERBOARD
       </Typography>
-      <Typography variant="h5" color={MAIN_COLOR} mb={7}>
-        {sep22Data.length ?? 0} RIDES ON SEP 22
-      </Typography>
-      <ToggleButtons
-        selectedType={currentSort.type}
-        handleSortToggle={handleSortToggle}
-        dir={currentSort.dir}
-      />
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: { xs: "column", sm: "row" },
+          mb: 2,
+        }}
+      >
+        <ToggleButtons
+          selectedType={currentSort.type}
+          handleSortToggle={handleSortToggle}
+          dir={currentSort.dir}
+        />
+        <Box
+          sx={{
+            "& .MuiTextField-root": { m: 1, outline: "none" },
+            "& label.Mui-focused": {
+              color: MAIN_COLOR,
+            },
+            "& label": {
+              color: "black",
+              fontSize: 14,
+            },
+            "& .MuiInput-underline:after": {
+              borderBottomColor: MAIN_COLOR,
+            },
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": {
+                borderColor: "rgba(0,0,0,.1)",
+              },
+              "&:hover fieldset": {
+                borderColor: MAIN_COLOR,
+              },
+              "&.Mui-focused fieldset": {
+                borderColor: "#6F7E8C",
+              },
+            },
+          }}
+        >
+          <TextField
+            onChange={(val) => setSearchText(val.currentTarget.value)}
+            sx={{
+              ml: 2,
+              width: 330,
+            }}
+            label={"Search"}
+            fullWidth
+            size="small"
+          />
+        </Box>
+      </Box>
       <Grid2 justifyContent={"center"} container spacing={3}>
         {sortedResults.map((activity, index) => (
           <Card
@@ -217,13 +271,8 @@ const ToggleButtons = (props) => {
   const { selectedType, handleSortToggle, dir } = props;
 
   return (
-    <ToggleButtonGroup
-      value={selectedType}
-      exclusive
-      sx={{ mb: 3 }}
-      size={"small"}
-    >
-      {["elevation", "distance", "name", "elapsed Time"].map((sortType) => (
+    <ToggleButtonGroup value={selectedType} exclusive size={"small"}>
+      {["elevation", "distance", "name", "elapsedTime"].map((sortType) => (
         <ToggleButton
           key={sortType}
           value={sortType}

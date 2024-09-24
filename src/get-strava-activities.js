@@ -1212,7 +1212,7 @@ export const sep22Data = [
     elevationGain: 4068,
     id: "Collin5866814986",
     distance: 37,
-    activityName: "Morning Ride",
+    activityName: "Hill Climb Revenge",
   },
   {
     id: "Katie7264919587",
