@@ -210,21 +210,36 @@ export const Leaderboard = () => {
               activity.url ? window.open(activity.url) : undefined
             }
           >
-            <CardContent sx={{ textAlign: "center" }}>
+            <CardContent
+              sx={{
+                textAlign: "center",
+                height: "200px", // Set a fixed height for all cards
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-between", // Ensures even spacing within the card
+              }}
+            >
               <Typography
                 variant="h5"
                 component="div"
-                sx={{ fontWeight: 600, fontSize: 20, mb: 1, color: MAIN_COLOR }}
+                sx={{ fontWeight: 600, fontSize: 18, color: MAIN_COLOR }}
               >
                 {activity.athleteName}
               </Typography>
               <Typography
                 variant="subtitle1"
-                sx={{ fontSize: 14, fontWeight: 700, color: MAIN_COLOR, mb: 2 }}
+                sx={{ fontSize: 12, fontWeight: 700, color: MAIN_COLOR }}
               >
                 {activity.activityName}
               </Typography>
-              <Box sx={{ display: "flex", justifyContent: "space-around" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-around",
+                  position: "relative",
+                  top: 20,
+                }}
+              >
                 <Box>
                   <Typography
                     variant="body2"
@@ -238,6 +253,12 @@ export const Leaderboard = () => {
                     sx={{ fontWeight: 700, color: MAIN_COLOR, fontSize: 16 }}
                   >
                     {activity.elevationGain.toLocaleString()}ft
+                  </Typography>
+                  <Typography
+                    variant="p"
+                    sx={{ fontWeight: 100, color: "white", fontSize: 12 }}
+                  >
+                    #{activity.elevationGainRank}
                   </Typography>
                 </Box>
                 <Box>
@@ -254,6 +275,12 @@ export const Leaderboard = () => {
                   >
                     {activity.distance}mi
                   </Typography>
+                  <Typography
+                    variant="p"
+                    sx={{ fontWeight: 100, color: "white", fontSize: 12 }}
+                  >
+                    #{activity.distanceRank}
+                  </Typography>
                 </Box>
                 <Box>
                   <Typography
@@ -268,6 +295,12 @@ export const Leaderboard = () => {
                     sx={{ fontWeight: 700, color: MAIN_COLOR, fontSize: 16 }}
                   >
                     {activity.elapsedTime}min
+                  </Typography>
+                  <Typography
+                    variant="p"
+                    sx={{ fontWeight: 100, color: "white", fontSize: 12 }}
+                  >
+                    #{activity.elapsedTimeRank}
                   </Typography>
                 </Box>
               </Box>
