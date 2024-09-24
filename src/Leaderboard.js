@@ -96,7 +96,7 @@ export const Leaderboard = () => {
 
     newUpdatedList.sort(sortFunction);
     setSortedResults(newUpdatedList);
-  }, [currentSort, sep22Data]);
+  }, [currentSort]);
 
   useEffect(() => {
     const newUpdatedList = [...sep22Data].filter((text) => {
