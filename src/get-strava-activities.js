@@ -45,7 +45,7 @@ export const getElevationGainForDate = async (date) => {
   }
 };
 
-export const SEP22ELEVATION = 1424692;
+export const SEP22ELEVATION = 1434722;
 export const SEP22DISTANCE = 11241;
 export const SEP22ELAPSEDTIME = 65970;
 
@@ -454,6 +454,15 @@ export const sep22Data = [
     athleteName: "John N.",
     id: "John11482025226",
     elapsedTime: 421,
+    activityName: "Morning Ride",
+  },
+  {
+    elevationGain: 10030,
+    date: "20240922",
+    distance: 69,
+    athleteName: "Fred W.",
+    id: "FredW11482025226",
+    elapsedTime: 283,
     activityName: "Morning Ride",
   },
   {
