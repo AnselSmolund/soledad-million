@@ -1,3 +1,5 @@
+import { sep22Data } from "./get-strava-activities";
+
 export const getCurrentDateInPST = () => {
   const todaysDate = new Date().toLocaleString("en-US", {
     timeZone: "America/Los_Angeles",
@@ -24,4 +26,12 @@ export const getCurrentDateLabelForView = () => {
   });
 
   return formattedDate;
+};
+
+export const getTotalElevation = () => {
+  let val = 0;
+  sep22Data.forEach((ride) => {
+    val += ride.elevationGain;
+  });
+  console.log(val);
 };

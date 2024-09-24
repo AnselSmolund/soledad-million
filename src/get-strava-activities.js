@@ -45,7 +45,7 @@ export const getElevationGainForDate = async (date) => {
   }
 };
 
-export const SEP22ELEVATION = 1365007;
+export const SEP22ELEVATION = 1390174;
 export const SEP22DISTANCE = 11241;
 export const SEP22ELAPSEDTIME = 65970;
 
@@ -130,6 +130,15 @@ export const sep22Data = [
     id: "Elisa20267841194",
     distance: 126,
     activityName: "Soledad challenge",
+  },
+  {
+    elapsedTime: 553,
+    date: "20240922",
+    elevationGain: 17434,
+    athleteName: "Adam S.",
+    id: "Adam103109",
+    distance: 122,
+    activityName: "If La Jolla could just pave a damn street..",
   },
   {
     athleteName: "Yee F.",
@@ -1251,6 +1260,16 @@ export const sep22Data = [
     id: "Sara9161319055",
   },
   {
+    elevationGain: 3924,
+    date: "20240922",
+    elapsedTime: 305,
+    activityName:
+      "I’m doing my part! I’m doing my part! I’m doing my part! I DIDN'T DO SHIT!!",
+    distance: 82,
+    athleteName: "Andy B.",
+    id: "AndyB9161319055",
+  },
+  {
     distance: 37,
     elevationGain: 3860,
     id: "Max5835615004",
@@ -1559,6 +1578,15 @@ export const sep22Data = [
     athleteName: "Henry E.",
   },
   {
+    distance: 30,
+    date: "20240922",
+    elevationGain: 2182,
+    id: "TomA8198731",
+    activityName: "Soledad Million Contribution...",
+    elapsedTime: 118,
+    athleteName: "Tom A.",
+  },
+  {
     distance: 24,
     date: "20240922",
     id: "Paxton378746442",
@@ -1729,6 +1757,15 @@ export const sep22Data = [
     athleteName: "Ulises G.",
     id: "Ulises389618562",
     elevationGain: 1667,
+  },
+  {
+    elapsedTime: 60,
+    distance: 12,
+    activityName: "Virtual climbing, but not on a trainer and also outdoors",
+    date: "20240922",
+    athleteName: "Bryan W.",
+    id: "BryanW9812",
+    elevationGain: 1620,
   },
   {
     date: "20240922",
