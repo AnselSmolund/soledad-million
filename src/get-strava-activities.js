@@ -2210,7 +2210,7 @@ export const sep22Data = [
     date: "20240922",
   },
   {
-    elapsedTime: 2861,
+    elapsedTime: 28,
     athleteName: "Robby “Ridetime” H.",
     id: "Robby “Ridetime”7853171603",
     elevationGain: 67,
