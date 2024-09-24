@@ -1764,6 +1764,18 @@ export const sep22Data = [
     elevationGainRank: 140,
   },
   {
+    distance: 27,
+    elevationGain: 3881,
+    id: "Robin5835615004",
+    date: "20240922",
+    activityName: "Morning Ride",
+    elapsedTime: 135,
+    athleteName: "Robin R.",
+    distanceRank: 151,
+    elapsedTimeRank: 122,
+    elevationGainRank: 141,
+  },
+  {
     distance: 37,
     elevationGain: 3860,
     id: "Max5835615004",
