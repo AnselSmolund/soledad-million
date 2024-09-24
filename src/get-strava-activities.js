@@ -331,6 +331,15 @@ export const sep22Data = [
     date: "20240922",
   },
   {
+    activityName: "The Tall Way to In-N-Out. 🍔",
+    elapsedTime: 305,
+    id: "SeanM1039012",
+    athleteName: "Sean M.",
+    distance: 72,
+    elevationGain: 10085,
+    date: "20240922",
+  },
+  {
     elevationGain: 10730,
     date: "20240922",
     activityName: "Soledad challenge- hopefully 10k in a day of climbing",
