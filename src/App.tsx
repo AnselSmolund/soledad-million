@@ -25,7 +25,7 @@ function HomePage() {
     };
   }, []);
 
-  const handleNavigate = (url) => {
+  const handleNavigate = (url: string) => {
     navigate(url);
   };
 
@@ -93,7 +93,10 @@ function HomePage() {
   );
 }
 
-const NavButtons = (props) => {
+interface NavButtonsProps {
+  handleNavigate: (val: string) => void;
+}
+const NavButtons: React.FC<NavButtonsProps> = (props) => {
   const { handleNavigate } = props;
   return (
     <Box
@@ -152,7 +155,7 @@ const theme = createTheme({
   },
 });
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
