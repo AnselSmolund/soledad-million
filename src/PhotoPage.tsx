@@ -6,40 +6,52 @@ import { NavButton } from "./Shared/Button";
 
 const photos = [
   {
-    img: './gallery/DSC07062.jpg'
+    img: './gallery/DSC07062.jpg',
+    alt: 'image1'
   },
   {
-    img: './gallery/DSC07077.jpg'
+    img: './gallery/DSC07077.jpg',
+    alt: 'image1'
   },
   {
-    img: './gallery/DSC07339.jpg'
+    img: './gallery/DSC07339.jpg',
+    alt: 'image1'
   },
   {
-    img: './gallery/DSC07347.jpg'
+    img: './gallery/DSC07347.jpg',
+    alt: 'image1'
   },
   {
-    img: './gallery/DSC07384.jpg'
+    img: './gallery/DSC07384.jpg',
+    alt: 'image1'
   },
   {
-    img: './gallery/1.jpg'
+    img: './gallery/1.jpg',
+    alt: 'image1'
   },
   {
-    img: './gallery/2.jpg'
+    img: './gallery/2.jpg',
+    alt: 'image1'
   },
   {
-    img: './gallery/3.jpg'
+    img: './gallery/3.jpg',
+    alt: 'image1'
   },
   {
-    img: './gallery/4.jpg'
+    img: './gallery/4.jpg',
+    alt: 'image1'
   },
   {
-    img: './gallery/5.jpg'
+    img: './gallery/5.jpg',
+    alt: 'image1'
   },
   {
-    img: './gallery/6.jpg'
+    img: './gallery/6.jpg',
+    alt: 'image1'
   },
   {
-    img: './gallery/7.jpg'
+    img: './gallery/7.jpg',
+    alt: 'image1'
   },
 ]
 
@@ -84,6 +96,7 @@ export const PhotoPage = () => {
             srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
             src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
             loading="lazy"
+            alt={item.alt}
           />
         </ImageListItem>
       ))}
