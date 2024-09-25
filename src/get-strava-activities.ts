@@ -4151,6 +4151,7 @@ export const sep22Data: RideType[] = [
       value: 44,
       rank: 256,
     },
+    url: "https://www.strava.com/athletes/5411032"
   },
   {
     title: "Afternoon Ride",
