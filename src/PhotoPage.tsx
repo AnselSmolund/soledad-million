@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, ImageList, ImageListItem, Typography, useMediaQuery } from "@mui/material";
-import { MAIN_COLOR, SECONDARY_COLOR } from "./util";
+import { MAIN_COLOR, SECONDARY_COLOR, THIRD_COLOR } from "./util";
 import { NavButton } from "./Shared/Button";
 import { photos } from "./photos";
 
@@ -35,6 +35,13 @@ export const PhotoPage = () => {
         url="/"
         text={"go back"}
       />
+      <Typography sx={{ paddingTop: 4 }} variant="h3" color={MAIN_COLOR}>
+        SOLEDAD MILLION GALLERY
+      </Typography>
+      <Typography fontSize="15px" color={THIRD_COLOR}> 
+        Want to thank Henry and James? Leave a tip 
+        <a href="buymeacoffee.com/jamesphotographyco" target="_blank" rel="noopener noreferrer" style={{ color: MAIN_COLOR, textDecoration: 'none' }}> here!</a>
+      </Typography>
       <ImageList variant="standard" cols={getCols()} gap={5*getCols()}> 
       {photos.map((item) => (
         <ImageListItem key={item.img}>
@@ -48,7 +55,7 @@ export const PhotoPage = () => {
       ))}
       </ImageList>
       <Typography sx={{ paddingTop: 4 }} variant="h3" color={MAIN_COLOR}>
-        STILL UPLOADING... COME BACK SOON FOR MORE
+        MORE PHOTOS COMING SOON...
       </Typography>
     </Box>
   );

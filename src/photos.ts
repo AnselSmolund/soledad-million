@@ -1,50 +1,17 @@
-export const photos = [
-    {
-      img: './gallery/DSC07062.jpg',
-      alt: 'image1'
-    },
-    {
-      img: './gallery/DSC07077.jpg',
-      alt: 'image1'
-    },
-    {
-      img: './gallery/DSC07339.jpg',
-      alt: 'image1'
-    },
-    {
-      img: './gallery/DSC07347.jpg',
-      alt: 'image1'
-    },
-    {
-      img: './gallery/DSC07384.jpg',
-      alt: 'image1'
-    },
-    {
-      img: './gallery/1.jpg',
-      alt: 'image1'
-    },
-    {
-      img: './gallery/2.jpg',
-      alt: 'image1'
-    },
-    {
-      img: './gallery/3.jpg',
-      alt: 'image1'
-    },
-    {
-      img: './gallery/4.jpg',
-      alt: 'image1'
-    },
-    {
-      img: './gallery/5.jpg',
-      alt: 'image1'
-    },
-    {
-      img: './gallery/6.jpg',
-      alt: 'image1'
-    },
-    {
-      img: './gallery/7.jpg',
-      alt: 'image1'
-    },
-  ]
+export const photos = Array.from({length: 202}, (_, index) => ({
+  img: `./gallery/image${index + 1}.jpg`,
+  alt: `Image${index + 1}`
+}));
+
+// Fisher-Yates Shuffle Function
+const shuffleArray = <T>(array: T[]): T[] => {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1)); // Random index
+      // Swap elements
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
+// Shuffle the photos array
+const shuffledPhotos = shuffleArray(photos);
