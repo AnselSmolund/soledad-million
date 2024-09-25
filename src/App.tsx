@@ -2,7 +2,7 @@ import "./App.css";
 import React, { useEffect } from "react";
 import { Typography, Box, CssBaseline, Button } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { SEP22ELEVATION } from "./get-strava-activities";
+import { sep22Data, SEP22ELEVATION } from "./get-strava-activities";
 import {
   BrowserRouter as Router,
   Routes,
@@ -37,7 +37,6 @@ function HomePage() {
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        backgroundColor: SECONDARY_COLOR,
         overflow: "hidden",
       }}
     >
@@ -76,8 +75,8 @@ function HomePage() {
         >
           <Typography variant="h3" sx={{ textAlign: "center", fontSize: 27 }}>
             ON SEPTEMBER 22, <br></br>
-            <span style={{ color: MAIN_COLOR }}>255</span> CYCLISTS CLIMBED A
-            TOTAL OF
+            <span style={{ color: MAIN_COLOR }}>{sep22Data.length}</span>{" "}
+            CYCLISTS CLIMBED A TOTAL OF
           </Typography>
         </Box>
         <Typography variant="h3" sx={{ textAlign: "center", fontSize: "19vw" }}>
@@ -139,6 +138,11 @@ const NavButtons: React.FC<NavButtonsProps> = (props) => {
   );
 };
 const theme = createTheme({
+  palette: {
+    background: {
+      default: SECONDARY_COLOR,
+    },
+  },
   typography: {
     fontFamily: "Everett, Arial, sans-serif",
   },

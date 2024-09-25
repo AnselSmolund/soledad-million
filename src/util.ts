@@ -35,3 +35,19 @@ export const getTotalElevation = () => {
   });
   console.log(val);
 };
+
+export const getTotalElapsedTime = () => {
+  let val = 0;
+  sep22Data.forEach((ride) => {
+    val += ride.elapsedTime.value;
+  });
+  console.log(val);
+};
+
+export const getTotalDistance = () => {
+  let val = 0;
+  sep22Data.forEach((ride) => {
+    val += ride.distance.value;
+  });
+  console.log(val);
+};
