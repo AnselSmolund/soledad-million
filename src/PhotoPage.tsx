@@ -1,60 +1,8 @@
 import React from "react";
 import { Box, ImageList, ImageListItem, Typography, useMediaQuery } from "@mui/material";
-
 import { MAIN_COLOR, SECONDARY_COLOR } from "./util";
 import { NavButton } from "./Shared/Button";
-
-const photos = [
-  {
-    img: './gallery/DSC07062.jpg',
-    alt: 'image1'
-  },
-  {
-    img: './gallery/DSC07077.jpg',
-    alt: 'image1'
-  },
-  {
-    img: './gallery/DSC07339.jpg',
-    alt: 'image1'
-  },
-  {
-    img: './gallery/DSC07347.jpg',
-    alt: 'image1'
-  },
-  {
-    img: './gallery/DSC07384.jpg',
-    alt: 'image1'
-  },
-  {
-    img: './gallery/1.jpg',
-    alt: 'image1'
-  },
-  {
-    img: './gallery/2.jpg',
-    alt: 'image1'
-  },
-  {
-    img: './gallery/3.jpg',
-    alt: 'image1'
-  },
-  {
-    img: './gallery/4.jpg',
-    alt: 'image1'
-  },
-  {
-    img: './gallery/5.jpg',
-    alt: 'image1'
-  },
-  {
-    img: './gallery/6.jpg',
-    alt: 'image1'
-  },
-  {
-    img: './gallery/7.jpg',
-    alt: 'image1'
-  },
-]
-
+import { photos } from "./photos";
 
 export const PhotoPage = () => {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
@@ -67,12 +15,10 @@ export const PhotoPage = () => {
       return 2;
     } else if(isLargeScreen){
       return 3;
-    } else{
+    } else {
       return 4;
-    }
-    
+    } 
   }
-
 
   return (
     <Box
@@ -104,8 +50,6 @@ export const PhotoPage = () => {
       <Typography sx={{ paddingTop: 4 }} variant="h3" color={MAIN_COLOR}>
         STILL UPLOADING... COME BACK SOON FOR MORE
       </Typography>
-      
-
     </Box>
   );
 };
