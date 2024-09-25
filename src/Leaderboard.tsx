@@ -9,7 +9,6 @@ import {
   ToggleButtonGroup,
   ToggleButton,
 } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 import { MAIN_COLOR, SECONDARY_COLOR } from "./util";
 import { RideType, sep22Data } from "./get-strava-activities";
 import ArrowUpward from "@mui/icons-material/ArrowUpward";
@@ -23,7 +22,7 @@ export const Leaderboard: React.FC = () => {
   const [sortBy, setSortBy] = useState("elevation");
   const [sortOrder, setSortOrder] = useState<"asc" | "desc">("desc");
 
-  const navigate = useNavigate();
+
 
   useEffect(() => {
     const newUpdatedList = [...sep22Data];
@@ -82,9 +81,7 @@ export const Leaderboard: React.FC = () => {
       }}
     >
       <NavButton
-        handleNavigate={() => {
-          navigate("/");
-        }}
+        url="/"
         text={"go back"}
       />
       <Typography variant="h4" color={MAIN_COLOR} mb={3}>
