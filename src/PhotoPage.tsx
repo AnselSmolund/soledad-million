@@ -67,7 +67,7 @@ export const PhotoPage = () => {
       return 2;
     } else if(isLargeScreen){
       return 3;
-    } else{
+    } else {
       return 4;
     }
     
