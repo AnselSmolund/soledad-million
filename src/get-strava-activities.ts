@@ -1,6 +1,6 @@
-export const SEP22ELEVATION = 1456258;
-export const SEP22DISTANCE = 11241;
-export const SEP22ELAPSEDTIME = 65970;
+export const SEP22ELEVATION = 1485756;
+export const SEP22DISTANCE = 12089;
+export const SEP22ELAPSEDTIME = 66949;
 
 export function calculateRankings(activities: RideType[]) {
   const assignRank = (
@@ -343,7 +343,7 @@ export const sep22Data: RideType[] = [
     athleteName: "Daniel K.",
     distance: {
       value: 67,
-      rank: 52,
+      rank: 53,
     },
     elapsedTime: {
       value: 576,
@@ -459,7 +459,7 @@ export const sep22Data: RideType[] = [
     },
     elapsedTime: {
       value: 361,
-      rank: 52,
+      rank: 53,
     },
     elevationGain: {
       value: 11626,
@@ -535,7 +535,7 @@ export const sep22Data: RideType[] = [
     athleteName: "Mathew Y.",
     distance: {
       value: 66,
-      rank: 53,
+      rank: 54,
     },
     elapsedTime: {
       value: 533,
@@ -555,7 +555,7 @@ export const sep22Data: RideType[] = [
     },
     elapsedTime: {
       value: 320,
-      rank: 77,
+      rank: 78,
     },
     elevationGain: {
       value: 10821,
@@ -711,11 +711,11 @@ export const sep22Data: RideType[] = [
     athleteName: "Teddy H.",
     distance: {
       value: 62,
-      rank: 62,
+      rank: 63,
     },
     elapsedTime: {
       value: 325,
-      rank: 69,
+      rank: 70,
     },
     elevationGain: {
       value: 10280,
@@ -747,7 +747,7 @@ export const sep22Data: RideType[] = [
     },
     elapsedTime: {
       value: 305,
-      rank: 95,
+      rank: 96,
     },
     elevationGain: {
       value: 10085,
@@ -759,15 +759,31 @@ export const sep22Data: RideType[] = [
     athleteName: "Chris D.",
     distance: {
       value: 58,
-      rank: 75,
+      rank: 76,
     },
     elapsedTime: {
       value: 370,
-      rank: 50,
+      rank: 51,
     },
     elevationGain: {
       value: 10070,
       rank: 45,
+    },
+  },
+  {
+    title: "Soledad 1M",
+    athleteName: "Chris T.",
+    distance: {
+      value: 68,
+      rank: 51,
+    },
+    elapsedTime: {
+      value: 375,
+      rank: 49,
+    },
+    elevationGain: {
+      value: 10061,
+      rank: 46,
     },
   },
   {
@@ -783,7 +799,7 @@ export const sep22Data: RideType[] = [
     },
     elevationGain: {
       value: 10041,
-      rank: 46,
+      rank: 47,
     },
   },
   {
@@ -795,11 +811,11 @@ export const sep22Data: RideType[] = [
     },
     elapsedTime: {
       value: 283,
-      rank: 106,
+      rank: 107,
     },
     elevationGain: {
       value: 10030,
-      rank: 47,
+      rank: 48,
     },
   },
   {
@@ -815,7 +831,7 @@ export const sep22Data: RideType[] = [
     },
     elevationGain: {
       value: 9188,
-      rank: 48,
+      rank: 49,
     },
   },
   {
@@ -823,15 +839,15 @@ export const sep22Data: RideType[] = [
     athleteName: "N8  🤘.",
     distance: {
       value: 43,
-      rank: 128,
+      rank: 129,
     },
     elapsedTime: {
       value: 192,
-      rank: 150,
+      rank: 151,
     },
     elevationGain: {
       value: 8991,
-      rank: 49,
+      rank: 50,
     },
   },
   {
@@ -839,15 +855,15 @@ export const sep22Data: RideType[] = [
     athleteName: "E F.",
     distance: {
       value: 59,
-      rank: 71,
+      rank: 72,
     },
     elapsedTime: {
       value: 314,
-      rank: 87,
+      rank: 88,
     },
     elevationGain: {
       value: 8524,
-      rank: 50,
+      rank: 51,
     },
   },
   {
@@ -855,15 +871,15 @@ export const sep22Data: RideType[] = [
     athleteName: "MotoDDS LJ D.",
     distance: {
       value: 59,
-      rank: 72,
+      rank: 73,
     },
     elapsedTime: {
       value: 269,
-      rank: 113,
+      rank: 114,
     },
     elevationGain: {
       value: 8517,
-      rank: 51,
+      rank: 52,
     },
   },
   {
@@ -871,15 +887,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Zac S.",
     distance: {
       value: 61,
-      rank: 65,
+      rank: 66,
     },
     elapsedTime: {
       value: 309,
-      rank: 89,
+      rank: 90,
     },
     elevationGain: {
       value: 8240,
-      rank: 52,
+      rank: 53,
     },
   },
   {
@@ -887,15 +903,15 @@ export const sep22Data: RideType[] = [
     athleteName: "STORM R.",
     distance: {
       value: 57,
-      rank: 80,
+      rank: 81,
     },
     elapsedTime: {
       value: 298,
-      rank: 98,
+      rank: 99,
     },
     elevationGain: {
       value: 8210,
-      rank: 53,
+      rank: 54,
     },
   },
   {
@@ -907,11 +923,11 @@ export const sep22Data: RideType[] = [
     },
     elapsedTime: {
       value: 323,
-      rank: 71,
+      rank: 72,
     },
     elevationGain: {
       value: 8209,
-      rank: 54,
+      rank: 55,
     },
   },
   {
@@ -919,15 +935,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jordi L.",
     distance: {
       value: 57,
-      rank: 81,
+      rank: 82,
     },
     elapsedTime: {
       value: 308,
-      rank: 90,
+      rank: 91,
     },
     elevationGain: {
       value: 8181,
-      rank: 55,
+      rank: 56,
     },
   },
   {
@@ -935,15 +951,15 @@ export const sep22Data: RideType[] = [
     athleteName: "quiet S.",
     distance: {
       value: 64,
-      rank: 57,
+      rank: 58,
     },
     elapsedTime: {
       value: 331,
-      rank: 64,
+      rank: 65,
     },
     elevationGain: {
       value: 8161,
-      rank: 56,
+      rank: 57,
     },
   },
   {
@@ -951,15 +967,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Alejandro A.",
     distance: {
       value: 59,
-      rank: 73,
+      rank: 74,
     },
     elapsedTime: {
       value: 292,
-      rank: 102,
+      rank: 103,
     },
     elevationGain: {
       value: 8138,
-      rank: 57,
+      rank: 58,
     },
   },
   {
@@ -967,15 +983,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Nicolas F.",
     distance: {
       value: 45,
-      rank: 120,
+      rank: 121,
     },
     elapsedTime: {
       value: 273,
-      rank: 112,
+      rank: 113,
     },
     elevationGain: {
       value: 8122,
-      rank: 58,
+      rank: 59,
     },
   },
   {
@@ -983,15 +999,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Soledandy 🦜.",
     distance: {
       value: 52,
-      rank: 97,
+      rank: 98,
     },
     elapsedTime: {
       value: 354,
-      rank: 57,
+      rank: 58,
     },
     elevationGain: {
       value: 8107,
-      rank: 59,
+      rank: 60,
     },
   },
   {
@@ -999,15 +1015,15 @@ export const sep22Data: RideType[] = [
     athleteName: "𝓢𝓽𝓪𝓰𝓮 2 𝓒𝔂𝓬𝓵𝓮𝓻𝔂 𝓜.",
     distance: {
       value: 58,
-      rank: 76,
+      rank: 77,
     },
     elapsedTime: {
       value: 251,
-      rank: 120,
+      rank: 121,
     },
     elevationGain: {
       value: 8062,
-      rank: 60,
+      rank: 61,
     },
   },
   {
@@ -1015,15 +1031,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Tiger Y.",
     distance: {
       value: 57,
-      rank: 82,
+      rank: 83,
     },
     elapsedTime: {
       value: 249,
-      rank: 128,
+      rank: 129,
     },
     elevationGain: {
       value: 8059,
-      rank: 61,
+      rank: 62,
     },
   },
   {
@@ -1031,15 +1047,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Ramon S.",
     distance: {
       value: 62,
-      rank: 63,
+      rank: 64,
     },
     elapsedTime: {
       value: 285,
-      rank: 103,
+      rank: 104,
     },
     elevationGain: {
       value: 8036,
-      rank: 62,
+      rank: 63,
     },
   },
   {
@@ -1047,15 +1063,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Tino M.",
     distance: {
       value: 59,
-      rank: 74,
+      rank: 75,
     },
     elapsedTime: {
       value: 315,
-      rank: 83,
+      rank: 84,
     },
     elevationGain: {
       value: 8007,
-      rank: 63,
+      rank: 64,
     },
   },
   {
@@ -1063,15 +1079,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Dante C.",
     distance: {
       value: 53,
-      rank: 95,
+      rank: 96,
     },
     elapsedTime: {
       value: 307,
-      rank: 92,
+      rank: 93,
     },
     elevationGain: {
       value: 7968,
-      rank: 64,
+      rank: 65,
     },
   },
   {
@@ -1087,7 +1103,7 @@ export const sep22Data: RideType[] = [
     },
     elevationGain: {
       value: 7912,
-      rank: 65,
+      rank: 66,
     },
   },
   {
@@ -1103,7 +1119,7 @@ export const sep22Data: RideType[] = [
     },
     elevationGain: {
       value: 7850,
-      rank: 66,
+      rank: 67,
     },
   },
   {
@@ -1111,15 +1127,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jordan K.",
     distance: {
       value: 58,
-      rank: 77,
+      rank: 78,
     },
     elapsedTime: {
       value: 250,
-      rank: 124,
+      rank: 125,
     },
     elevationGain: {
       value: 7692,
-      rank: 67,
+      rank: 68,
     },
   },
   {
@@ -1127,15 +1143,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jon S.",
     distance: {
       value: 54,
-      rank: 90,
+      rank: 91,
     },
     elapsedTime: {
       value: 322,
-      rank: 75,
+      rank: 76,
     },
     elevationGain: {
       value: 7508,
-      rank: 68,
+      rank: 69,
     },
   },
   {
@@ -1143,15 +1159,15 @@ export const sep22Data: RideType[] = [
     athleteName: "David C.",
     distance: {
       value: 58,
-      rank: 78,
+      rank: 79,
     },
     elapsedTime: {
       value: 282,
-      rank: 107,
+      rank: 108,
     },
     elevationGain: {
       value: 7417,
-      rank: 69,
+      rank: 70,
     },
   },
   {
@@ -1159,15 +1175,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Sales P.",
     distance: {
       value: 48,
-      rank: 107,
+      rank: 108,
     },
     elapsedTime: {
       value: 342,
-      rank: 62,
+      rank: 63,
     },
     elevationGain: {
       value: 7161,
-      rank: 70,
+      rank: 71,
     },
   },
   {
@@ -1175,15 +1191,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Breddie  M.",
     distance: {
       value: 45,
-      rank: 121,
+      rank: 122,
     },
     elapsedTime: {
       value: 308,
-      rank: 91,
+      rank: 92,
     },
     elevationGain: {
       value: 7127,
-      rank: 71,
+      rank: 72,
     },
   },
   {
@@ -1191,7 +1207,7 @@ export const sep22Data: RideType[] = [
     athleteName: "Jackson D.",
     distance: {
       value: 64,
-      rank: 58,
+      rank: 59,
     },
     elapsedTime: {
       value: 439,
@@ -1199,7 +1215,7 @@ export const sep22Data: RideType[] = [
     },
     elevationGain: {
       value: 7102,
-      rank: 72,
+      rank: 73,
     },
   },
   {
@@ -1207,15 +1223,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Luke H.",
     distance: {
       value: 51,
-      rank: 102,
+      rank: 103,
     },
     elapsedTime: {
       value: 294,
-      rank: 100,
+      rank: 101,
     },
     elevationGain: {
       value: 7075,
-      rank: 73,
+      rank: 74,
     },
   },
   {
@@ -1223,15 +1239,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Peter S.",
     distance: {
       value: 56,
-      rank: 87,
+      rank: 88,
     },
     elapsedTime: {
       value: 326,
-      rank: 68,
+      rank: 69,
     },
     elevationGain: {
       value: 6980,
-      rank: 74,
+      rank: 75,
     },
   },
   {
@@ -1239,15 +1255,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Maddison R.",
     distance: {
       value: 44,
-      rank: 125,
+      rank: 126,
     },
     elapsedTime: {
       value: 211,
-      rank: 141,
+      rank: 142,
     },
     elevationGain: {
       value: 6934,
-      rank: 75,
+      rank: 76,
     },
   },
   {
@@ -1255,15 +1271,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Dave C.",
     distance: {
       value: 52,
-      rank: 98,
+      rank: 99,
     },
     elapsedTime: {
       value: 356,
-      rank: 54,
+      rank: 55,
     },
     elevationGain: {
       value: 6767,
-      rank: 76,
+      rank: 77,
     },
   },
   {
@@ -1271,15 +1287,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Todd B.",
     distance: {
       value: 46,
-      rank: 109,
+      rank: 110,
     },
     elapsedTime: {
       value: 251,
-      rank: 122,
+      rank: 123,
     },
     elevationGain: {
       value: 6764,
-      rank: 77,
+      rank: 78,
     },
   },
   {
@@ -1287,15 +1303,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Eric R.",
     distance: {
       value: 60,
-      rank: 69,
+      rank: 70,
     },
     elapsedTime: {
       value: 293,
-      rank: 101,
+      rank: 102,
     },
     elevationGain: {
       value: 6742,
-      rank: 78,
+      rank: 79,
     },
   },
   {
@@ -1303,15 +1319,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Hannah F.",
     distance: {
       value: 52,
-      rank: 99,
+      rank: 100,
     },
     elapsedTime: {
       value: 359,
-      rank: 53,
+      rank: 54,
     },
     elevationGain: {
       value: 6587,
-      rank: 79,
+      rank: 80,
     },
   },
   {
@@ -1319,15 +1335,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Samuel V.",
     distance: {
       value: 64,
-      rank: 59,
+      rank: 60,
     },
     elapsedTime: {
       value: 343,
-      rank: 60,
+      rank: 61,
     },
     elevationGain: {
       value: 6505,
-      rank: 80,
+      rank: 81,
     },
   },
   {
@@ -1335,15 +1351,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Eduard P.",
     distance: {
       value: 54,
-      rank: 91,
+      rank: 92,
     },
     elapsedTime: {
       value: 343,
-      rank: 61,
+      rank: 62,
     },
     elevationGain: {
       value: 6496,
-      rank: 81,
+      rank: 82,
     },
   },
   {
@@ -1351,15 +1367,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Max Y.",
     distance: {
       value: 50,
-      rank: 103,
+      rank: 104,
     },
     elapsedTime: {
       value: 250,
-      rank: 125,
+      rank: 126,
     },
     elevationGain: {
       value: 6429,
-      rank: 82,
+      rank: 83,
     },
   },
   {
@@ -1367,15 +1383,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Carolyn B.",
     distance: {
       value: 68,
-      rank: 51,
+      rank: 52,
     },
     elapsedTime: {
       value: 354,
-      rank: 56,
+      rank: 57,
     },
     elevationGain: {
       value: 6426,
-      rank: 83,
+      rank: 84,
     },
   },
   {
@@ -1383,15 +1399,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Scott T.",
     distance: {
       value: 54,
-      rank: 92,
+      rank: 93,
     },
     elapsedTime: {
       value: 320,
-      rank: 78,
+      rank: 79,
     },
     elevationGain: {
       value: 6396,
-      rank: 84,
+      rank: 85,
     },
   },
   {
@@ -1399,15 +1415,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Max Haggard 🗡.",
     distance: {
       value: 44,
-      rank: 126,
+      rank: 127,
     },
     elapsedTime: {
       value: 225,
-      rank: 135,
+      rank: 136,
     },
     elevationGain: {
       value: 6328,
-      rank: 85,
+      rank: 86,
     },
   },
   {
@@ -1415,15 +1431,15 @@ export const sep22Data: RideType[] = [
     athleteName: "jonnyknight ✌.",
     distance: {
       value: 54,
-      rank: 93,
+      rank: 94,
     },
     elapsedTime: {
       value: 305,
-      rank: 96,
+      rank: 97,
     },
     elevationGain: {
       value: 6282,
-      rank: 86,
+      rank: 87,
     },
   },
   {
@@ -1431,15 +1447,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Steven  K.",
     distance: {
       value: 53,
-      rank: 96,
+      rank: 97,
     },
     elapsedTime: {
       value: 284,
-      rank: 105,
+      rank: 106,
     },
     elevationGain: {
       value: 6219,
-      rank: 87,
+      rank: 88,
     },
   },
   {
@@ -1447,15 +1463,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Tanner S.",
     distance: {
       value: 39,
-      rank: 142,
+      rank: 143,
     },
     elapsedTime: {
       value: 320,
-      rank: 79,
+      rank: 80,
     },
     elevationGain: {
       value: 6128,
-      rank: 88,
+      rank: 89,
     },
   },
   {
@@ -1464,15 +1480,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Brett C.",
     distance: {
       value: 61,
-      rank: 66,
+      rank: 67,
     },
     elapsedTime: {
       value: 296,
-      rank: 99,
+      rank: 100,
     },
     elevationGain: {
       value: 6031,
-      rank: 89,
+      rank: 90,
     },
   },
   {
@@ -1480,15 +1496,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Josh Bonnici ⚖️ B.",
     distance: {
       value: 50,
-      rank: 104,
+      rank: 105,
     },
     elapsedTime: {
       value: 253,
-      rank: 119,
+      rank: 120,
     },
     elevationGain: {
       value: 6026,
-      rank: 90,
+      rank: 91,
     },
   },
   {
@@ -1496,15 +1512,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Dan H.",
     distance: {
       value: 65,
-      rank: 55,
+      rank: 56,
     },
     elapsedTime: {
       value: 322,
-      rank: 73,
+      rank: 74,
     },
     elevationGain: {
       value: 6019,
-      rank: 91,
+      rank: 92,
     },
   },
   {
@@ -1512,7 +1528,7 @@ export const sep22Data: RideType[] = [
     athleteName: "DMarzenit ..",
     distance: {
       value: 65,
-      rank: 56,
+      rank: 57,
     },
     elapsedTime: {
       value: 381,
@@ -1520,7 +1536,7 @@ export const sep22Data: RideType[] = [
     },
     elevationGain: {
       value: 6003,
-      rank: 92,
+      rank: 93,
     },
   },
   {
@@ -1532,11 +1548,11 @@ export const sep22Data: RideType[] = [
     },
     elapsedTime: {
       value: 362,
-      rank: 51,
+      rank: 52,
     },
     elevationGain: {
       value: 5944,
-      rank: 93,
+      rank: 94,
     },
   },
   {
@@ -1544,15 +1560,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jacopo 🍊 D.",
     distance: {
       value: 49,
-      rank: 105,
+      rank: 106,
     },
     elapsedTime: {
       value: 356,
-      rank: 55,
+      rank: 56,
     },
     elevationGain: {
       value: 5882,
-      rank: 94,
+      rank: 95,
     },
   },
   {
@@ -1560,15 +1576,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Faiz E.",
     distance: {
       value: 58,
-      rank: 79,
+      rank: 80,
     },
     elapsedTime: {
       value: 349,
-      rank: 58,
+      rank: 59,
     },
     elevationGain: {
       value: 5836,
-      rank: 95,
+      rank: 96,
     },
   },
   {
@@ -1576,15 +1592,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Dalton T.",
     distance: {
       value: 42,
-      rank: 131,
+      rank: 132,
     },
     elapsedTime: {
       value: 257,
-      rank: 116,
+      rank: 117,
     },
     elevationGain: {
       value: 5829,
-      rank: 96,
+      rank: 97,
     },
   },
   {
@@ -1592,15 +1608,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Sydney S.",
     distance: {
       value: 64,
-      rank: 60,
+      rank: 61,
     },
     elapsedTime: {
       value: 323,
-      rank: 72,
+      rank: 73,
     },
     elevationGain: {
       value: 5803,
-      rank: 97,
+      rank: 98,
     },
   },
   {
@@ -1608,15 +1624,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Luca V.",
     distance: {
       value: 48,
-      rank: 108,
+      rank: 109,
     },
     elapsedTime: {
       value: 277,
-      rank: 110,
+      rank: 111,
     },
     elevationGain: {
       value: 5609,
-      rank: 98,
+      rank: 99,
     },
   },
   {
@@ -1624,15 +1640,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Grace M.",
     distance: {
       value: 39,
-      rank: 143,
+      rank: 144,
     },
     elapsedTime: {
       value: 315,
-      rank: 86,
+      rank: 87,
     },
     elevationGain: {
       value: 5429,
-      rank: 99,
+      rank: 100,
     },
   },
   {
@@ -1640,15 +1656,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Chao J.",
     distance: {
       value: 46,
-      rank: 110,
+      rank: 111,
     },
     elapsedTime: {
       value: 314,
-      rank: 88,
+      rank: 89,
     },
     elevationGain: {
       value: 5416,
-      rank: 100,
+      rank: 101,
     },
   },
   {
@@ -1656,15 +1672,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Huang Z.",
     distance: {
       value: 46,
-      rank: 111,
+      rank: 112,
     },
     elapsedTime: {
       value: 315,
-      rank: 84,
+      rank: 85,
     },
     elevationGain: {
       value: 5412,
-      rank: 101,
+      rank: 102,
     },
   },
   {
@@ -1672,27 +1688,11 @@ export const sep22Data: RideType[] = [
     athleteName: "Huang Z.",
     distance: {
       value: 46,
-      rank: 112,
-    },
-    elapsedTime: {
-      value: 316,
-      rank: 81,
-    },
-    elevationGain: {
-      value: 5388,
-      rank: 102,
-    },
-  },
-  {
-    title: "Soledad Million Challenge - 7 ups",
-    athleteName: "Pengyu Y.",
-    distance: {
-      value: 46,
       rank: 113,
     },
     elapsedTime: {
-      value: 315,
-      rank: 85,
+      value: 316,
+      rank: 82,
     },
     elevationGain: {
       value: 5388,
@@ -1700,19 +1700,35 @@ export const sep22Data: RideType[] = [
     },
   },
   {
-    title: "Morning Ride",
-    athleteName: "Gang C.",
+    title: "Soledad Million Challenge - 7 ups",
+    athleteName: "Pengyu Y.",
     distance: {
       value: 46,
       rank: 114,
     },
     elapsedTime: {
+      value: 315,
+      rank: 86,
+    },
+    elevationGain: {
+      value: 5388,
+      rank: 104,
+    },
+  },
+  {
+    title: "Morning Ride",
+    athleteName: "Gang C.",
+    distance: {
+      value: 46,
+      rank: 115,
+    },
+    elapsedTime: {
       value: 316,
-      rank: 82,
+      rank: 83,
     },
     elevationGain: {
       value: 5370,
-      rank: 104,
+      rank: 105,
     },
   },
   {
@@ -1720,15 +1736,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Ron F.",
     distance: {
       value: 46,
-      rank: 115,
+      rank: 116,
     },
     elapsedTime: {
       value: 254,
-      rank: 118,
+      rank: 119,
     },
     elevationGain: {
       value: 5338,
-      rank: 105,
+      rank: 106,
     },
   },
   {
@@ -1736,15 +1752,15 @@ export const sep22Data: RideType[] = [
     athleteName: "yang C.",
     distance: {
       value: 41,
-      rank: 135,
+      rank: 136,
     },
     elapsedTime: {
       value: 285,
-      rank: 104,
+      rank: 105,
     },
     elevationGain: {
       value: 5314,
-      rank: 106,
+      rank: 107,
     },
   },
   {
@@ -1752,15 +1768,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Travis J.",
     distance: {
       value: 38,
-      rank: 146,
+      rank: 148,
     },
     elapsedTime: {
       value: 206,
-      rank: 143,
+      rank: 144,
     },
     elevationGain: {
       value: 5222,
-      rank: 107,
+      rank: 108,
     },
   },
   {
@@ -1768,15 +1784,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Robert P.",
     distance: {
       value: 43,
-      rank: 129,
+      rank: 130,
     },
     elapsedTime: {
       value: 255,
-      rank: 117,
+      rank: 118,
     },
     elevationGain: {
       value: 5183,
-      rank: 108,
+      rank: 109,
     },
   },
   {
@@ -1784,27 +1800,11 @@ export const sep22Data: RideType[] = [
     athleteName: "Ed P.",
     distance: {
       value: 36,
-      rank: 154,
+      rank: 156,
     },
     elapsedTime: {
       value: 274,
-      rank: 111,
-    },
-    elevationGain: {
-      value: 5176,
-      rank: 109,
-    },
-  },
-  {
-    title: "Morning Ride",
-    athleteName: "Matthew G.",
-    distance: {
-      value: 39,
-      rank: 144,
-    },
-    elapsedTime: {
-      value: 212,
-      rank: 139,
+      rank: 112,
     },
     elevationGain: {
       value: 5176,
@@ -1812,15 +1812,15 @@ export const sep22Data: RideType[] = [
     },
   },
   {
-    title: "7 Soledaddies",
-    athleteName: "Jack L.",
+    title: "Morning Ride",
+    athleteName: "Matthew G.",
     distance: {
-      value: 45,
-      rank: 122,
+      value: 39,
+      rank: 145,
     },
     elapsedTime: {
-      value: 190,
-      rank: 151,
+      value: 212,
+      rank: 140,
     },
     elevationGain: {
       value: 5176,
@@ -1828,19 +1828,51 @@ export const sep22Data: RideType[] = [
     },
   },
   {
+    title: "7 Soledaddies",
+    athleteName: "Jack L.",
+    distance: {
+      value: 45,
+      rank: 123,
+    },
+    elapsedTime: {
+      value: 190,
+      rank: 152,
+    },
+    elevationGain: {
+      value: 5176,
+      rank: 112,
+    },
+  },
+  {
+    title: "Soledad Million Challenge",
+    athleteName: "Maitram G.",
+    distance: {
+      value: 39,
+      rank: 146,
+    },
+    elapsedTime: {
+      value: 21,
+      rank: 255,
+    },
+    elevationGain: {
+      value: 5171,
+      rank: 113,
+    },
+  },
+  {
     title: "Soledad EverQuest with a touch of Torrey Pines",
     athleteName: "Danger M.",
     distance: {
       value: 52,
-      rank: 100,
+      rank: 101,
     },
     elapsedTime: {
       value: 303,
-      rank: 97,
+      rank: 98,
     },
     elevationGain: {
       value: 5134,
-      rank: 112,
+      rank: 114,
     },
   },
   {
@@ -1848,15 +1880,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Corey J.",
     distance: {
       value: 34,
-      rank: 161,
+      rank: 163,
     },
     elapsedTime: {
       value: 151,
-      rank: 171,
+      rank: 173,
     },
     elevationGain: {
       value: 5094,
-      rank: 113,
+      rank: 115,
     },
   },
   {
@@ -1864,15 +1896,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Carson B.",
     distance: {
       value: 40,
-      rank: 140,
+      rank: 141,
     },
     elapsedTime: {
       value: 342,
-      rank: 63,
+      rank: 64,
     },
     elevationGain: {
       value: 5060,
-      rank: 114,
+      rank: 116,
     },
   },
   {
@@ -1880,15 +1912,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Pej K.",
     distance: {
       value: 49,
-      rank: 106,
+      rank: 107,
     },
     elapsedTime: {
       value: 228,
-      rank: 134,
+      rank: 135,
     },
     elevationGain: {
       value: 5042,
-      rank: 115,
+      rank: 117,
     },
   },
   {
@@ -1896,15 +1928,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Chris H.",
     distance: {
       value: 46,
-      rank: 116,
+      rank: 117,
     },
     elapsedTime: {
       value: 250,
-      rank: 126,
+      rank: 127,
     },
     elevationGain: {
       value: 5035,
-      rank: 116,
+      rank: 118,
     },
   },
   {
@@ -1912,15 +1944,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Gavin G.",
     distance: {
       value: 54,
-      rank: 94,
+      rank: 95,
     },
     elapsedTime: {
       value: 248,
-      rank: 131,
+      rank: 132,
     },
     elevationGain: {
       value: 4989,
-      rank: 117,
+      rank: 119,
     },
   },
   {
@@ -1928,15 +1960,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Lance H.",
     distance: {
       value: 33,
-      rank: 163,
+      rank: 165,
     },
     elapsedTime: {
       value: 172,
-      rank: 161,
+      rank: 162,
     },
     elevationGain: {
       value: 4734,
-      rank: 118,
+      rank: 120,
     },
   },
   {
@@ -1944,15 +1976,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jared L.",
     distance: {
       value: 57,
-      rank: 83,
+      rank: 84,
     },
     elapsedTime: {
       value: 216,
-      rank: 137,
+      rank: 138,
     },
     elevationGain: {
       value: 4683,
-      rank: 119,
+      rank: 121,
     },
   },
   {
@@ -1960,15 +1992,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Thomas S.",
     distance: {
       value: 35,
-      rank: 156,
+      rank: 158,
     },
     elapsedTime: {
       value: 166,
-      rank: 163,
+      rank: 164,
     },
     elevationGain: {
       value: 4583,
-      rank: 120,
+      rank: 122,
     },
   },
   {
@@ -1976,15 +2008,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Kyle M.",
     distance: {
       value: 36,
-      rank: 155,
+      rank: 157,
     },
     elapsedTime: {
       value: 249,
-      rank: 130,
+      rank: 131,
     },
     elevationGain: {
       value: 4510,
-      rank: 121,
+      rank: 123,
     },
   },
   {
@@ -1992,15 +2024,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Casey Foust •.",
     distance: {
       value: 42,
-      rank: 132,
+      rank: 133,
     },
     elapsedTime: {
       value: 249,
-      rank: 129,
+      rank: 130,
     },
     elevationGain: {
       value: 4507,
-      rank: 122,
+      rank: 124,
     },
   },
   {
@@ -2008,15 +2040,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Neal L.",
     distance: {
       value: 44,
-      rank: 127,
+      rank: 128,
     },
     elapsedTime: {
       value: 259,
-      rank: 115,
+      rank: 116,
     },
     elevationGain: {
       value: 4504,
-      rank: 123,
+      rank: 125,
     },
   },
   {
@@ -2024,15 +2056,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Humberto G.",
     distance: {
       value: 56,
-      rank: 88,
+      rank: 89,
     },
     elapsedTime: {
       value: 324,
-      rank: 70,
+      rank: 71,
     },
     elevationGain: {
       value: 4419,
-      rank: 124,
+      rank: 126,
     },
   },
   {
@@ -2040,15 +2072,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Ty S.",
     distance: {
       value: 32,
-      rank: 165,
+      rank: 167,
     },
     elapsedTime: {
       value: 166,
-      rank: 164,
+      rank: 165,
     },
     elevationGain: {
       value: 4392,
-      rank: 125,
+      rank: 127,
     },
   },
   {
@@ -2056,15 +2088,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Micah L.",
     distance: {
       value: 42,
-      rank: 133,
+      rank: 134,
     },
     elapsedTime: {
       value: 219,
-      rank: 136,
+      rank: 137,
     },
     elevationGain: {
       value: 4391,
-      rank: 126,
+      rank: 128,
     },
   },
   {
@@ -2072,15 +2104,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jason H.",
     distance: {
       value: 31,
-      rank: 168,
+      rank: 170,
     },
     elapsedTime: {
       value: 173,
-      rank: 160,
+      rank: 161,
     },
     elevationGain: {
       value: 4376,
-      rank: 127,
+      rank: 129,
     },
   },
   {
@@ -2088,15 +2120,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Dave M.",
     distance: {
       value: 56,
-      rank: 89,
+      rank: 90,
     },
     elapsedTime: {
       value: 281,
-      rank: 108,
+      rank: 109,
     },
     elevationGain: {
       value: 4350,
-      rank: 128,
+      rank: 130,
     },
   },
   {
@@ -2104,15 +2136,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Neil S.",
     distance: {
       value: 61,
-      rank: 67,
+      rank: 68,
     },
     elapsedTime: {
       value: 327,
-      rank: 65,
+      rank: 66,
     },
     elevationGain: {
       value: 4287,
-      rank: 129,
+      rank: 131,
     },
   },
   {
@@ -2120,15 +2152,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Andrew B.",
     distance: {
       value: 46,
-      rank: 117,
+      rank: 118,
     },
     elapsedTime: {
       value: 327,
-      rank: 66,
+      rank: 67,
     },
     elevationGain: {
       value: 4271,
-      rank: 130,
+      rank: 132,
     },
   },
   {
@@ -2136,15 +2168,31 @@ export const sep22Data: RideType[] = [
     athleteName: "Angela P.",
     distance: {
       value: 29,
-      rank: 171,
+      rank: 174,
     },
     elapsedTime: {
       value: 189,
-      rank: 152,
+      rank: 153,
     },
     elevationGain: {
       value: 4257,
-      rank: 131,
+      rank: 133,
+    },
+  },
+  {
+    title: "My 1st Ever Trip Up Soledad! Also My 2nd, 3rd, 4th, And 5th",
+    athleteName: "Kj E.",
+    distance: {
+      value: 31,
+      rank: 171,
+    },
+    elapsedTime: {
+      value: 163,
+      rank: 166,
+    },
+    elevationGain: {
+      value: 4236,
+      rank: 134,
     },
   },
   {
@@ -2153,7 +2201,7 @@ export const sep22Data: RideType[] = [
     athleteName: "Laurel A.",
     distance: {
       value: 60,
-      rank: 70,
+      rank: 71,
     },
     elapsedTime: {
       value: 386,
@@ -2161,7 +2209,7 @@ export const sep22Data: RideType[] = [
     },
     elevationGain: {
       value: 4172,
-      rank: 132,
+      rank: 135,
     },
   },
   {
@@ -2169,15 +2217,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Luke C.",
     distance: {
       value: 39,
-      rank: 145,
+      rank: 147,
     },
     elapsedTime: {
       value: 279,
-      rank: 109,
+      rank: 110,
     },
     elevationGain: {
       value: 4146,
-      rank: 133,
+      rank: 136,
     },
   },
   {
@@ -2185,15 +2233,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Patrick R.",
     distance: {
       value: 45,
-      rank: 123,
+      rank: 124,
     },
     elapsedTime: {
       value: 263,
-      rank: 114,
+      rank: 115,
     },
     elevationGain: {
       value: 4081,
-      rank: 134,
+      rank: 137,
     },
   },
   {
@@ -2201,15 +2249,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Dima D.",
     distance: {
       value: 62,
-      rank: 64,
+      rank: 65,
     },
     elapsedTime: {
       value: 245,
-      rank: 132,
+      rank: 133,
     },
     elevationGain: {
       value: 4081,
-      rank: 135,
+      rank: 138,
     },
   },
   {
@@ -2217,15 +2265,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Collin B.",
     distance: {
       value: 37,
-      rank: 151,
+      rank: 153,
     },
     elapsedTime: {
       value: 250,
-      rank: 127,
+      rank: 128,
     },
     elevationGain: {
       value: 4068,
-      rank: 136,
+      rank: 139,
     },
   },
   {
@@ -2233,15 +2281,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Katie G.",
     distance: {
       value: 46,
-      rank: 118,
+      rank: 119,
     },
     elapsedTime: {
       value: 327,
-      rank: 67,
+      rank: 68,
     },
     elevationGain: {
       value: 4022,
-      rank: 137,
+      rank: 140,
     },
   },
   {
@@ -2249,15 +2297,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jaime A.",
     distance: {
       value: 28,
-      rank: 177,
+      rank: 180,
     },
     elapsedTime: {
       value: 149,
-      rank: 174,
+      rank: 176,
     },
     elevationGain: {
       value: 4002,
-      rank: 138,
+      rank: 141,
     },
   },
   {
@@ -2265,15 +2313,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jim P.",
     distance: {
       value: 64,
-      rank: 61,
+      rank: 62,
     },
     elapsedTime: {
       value: 371,
-      rank: 49,
+      rank: 50,
     },
     elevationGain: {
       value: 3968,
-      rank: 139,
+      rank: 142,
     },
   },
   {
@@ -2281,15 +2329,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Sara C.",
     distance: {
       value: 57,
-      rank: 84,
+      rank: 85,
     },
     elapsedTime: {
       value: 318,
-      rank: 80,
+      rank: 81,
     },
     elevationGain: {
       value: 3965,
-      rank: 140,
+      rank: 143,
     },
   },
   {
@@ -2302,11 +2350,11 @@ export const sep22Data: RideType[] = [
     },
     elapsedTime: {
       value: 305,
-      rank: 94,
+      rank: 95,
     },
     elevationGain: {
       value: 3924,
-      rank: 141,
+      rank: 144,
     },
   },
   {
@@ -2314,15 +2362,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Robin R.",
     distance: {
       value: 27,
-      rank: 180,
+      rank: 183,
     },
     elapsedTime: {
       value: 135,
-      rank: 180,
+      rank: 182,
     },
     elevationGain: {
       value: 3881,
-      rank: 142,
+      rank: 145,
     },
   },
   {
@@ -2330,15 +2378,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Max B.",
     distance: {
       value: 37,
-      rank: 152,
+      rank: 154,
     },
     elapsedTime: {
       value: 251,
-      rank: 123,
+      rank: 124,
     },
     elevationGain: {
       value: 3860,
-      rank: 143,
+      rank: 146,
     },
   },
   {
@@ -2346,15 +2394,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jason B.",
     distance: {
       value: 28,
-      rank: 178,
+      rank: 181,
     },
     elapsedTime: {
       value: 153,
-      rank: 168,
+      rank: 170,
     },
     elevationGain: {
       value: 3835,
-      rank: 144,
+      rank: 147,
     },
   },
   {
@@ -2362,15 +2410,15 @@ export const sep22Data: RideType[] = [
     athleteName: "sully N.",
     distance: {
       value: 29,
-      rank: 172,
+      rank: 175,
     },
     elapsedTime: {
       value: 129,
-      rank: 188,
+      rank: 190,
     },
     elevationGain: {
       value: 3832,
-      rank: 145,
+      rank: 148,
     },
   },
   {
@@ -2378,15 +2426,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Oscar M.",
     distance: {
       value: 32,
-      rank: 166,
+      rank: 168,
     },
     elapsedTime: {
       value: 150,
-      rank: 173,
+      rank: 175,
     },
     elevationGain: {
       value: 3480,
-      rank: 146,
+      rank: 149,
     },
   },
   {
@@ -2394,15 +2442,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Laurel A.",
     distance: {
       value: 26,
-      rank: 184,
+      rank: 187,
     },
     elapsedTime: {
       value: 125,
-      rank: 190,
+      rank: 192,
     },
     elevationGain: {
       value: 3451,
-      rank: 147,
+      rank: 150,
     },
   },
   {
@@ -2410,15 +2458,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jonathan M.",
     distance: {
       value: 26,
-      rank: 185,
+      rank: 188,
     },
     elapsedTime: {
       value: 132,
-      rank: 185,
+      rank: 187,
     },
     elevationGain: {
       value: 3415,
-      rank: 148,
+      rank: 151,
     },
   },
   {
@@ -2426,15 +2474,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Matthew S.",
     distance: {
       value: 23,
-      rank: 193,
+      rank: 196,
     },
     elapsedTime: {
       value: 134,
-      rank: 182,
+      rank: 184,
     },
     elevationGain: {
       value: 3389,
-      rank: 149,
+      rank: 152,
     },
   },
   {
@@ -2442,15 +2490,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Barry L.",
     distance: {
       value: 38,
-      rank: 147,
+      rank: 149,
     },
     elapsedTime: {
       value: 230,
-      rank: 133,
+      rank: 134,
     },
     elevationGain: {
       value: 3382,
-      rank: 150,
+      rank: 153,
     },
   },
   {
@@ -2458,15 +2506,15 @@ export const sep22Data: RideType[] = [
     athleteName: "DeShawn M.",
     distance: {
       value: 29,
-      rank: 173,
+      rank: 176,
     },
     elapsedTime: {
       value: 151,
-      rank: 172,
+      rank: 174,
     },
     elevationGain: {
       value: 3372,
-      rank: 151,
+      rank: 154,
     },
   },
   {
@@ -2474,15 +2522,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Angela P.",
     distance: {
       value: 23,
-      rank: 194,
+      rank: 197,
     },
     elapsedTime: {
       value: 138,
-      rank: 177,
+      rank: 179,
     },
     elevationGain: {
       value: 3290,
-      rank: 152,
+      rank: 155,
     },
   },
   {
@@ -2490,15 +2538,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Danny H.",
     distance: {
       value: 66,
-      rank: 54,
+      rank: 55,
     },
     elapsedTime: {
       value: 321,
-      rank: 76,
+      rank: 77,
     },
     elevationGain: {
       value: 3266,
-      rank: 153,
+      rank: 156,
     },
   },
   {
@@ -2506,15 +2554,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Yovanny L.",
     distance: {
       value: 52,
-      rank: 101,
+      rank: 102,
     },
     elapsedTime: {
       value: 210,
-      rank: 142,
+      rank: 143,
     },
     elevationGain: {
       value: 3176,
-      rank: 154,
+      rank: 157,
     },
   },
   {
@@ -2522,15 +2570,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Pizza T.",
     distance: {
       value: 35,
-      rank: 157,
+      rank: 159,
     },
     elapsedTime: {
       value: 203,
-      rank: 144,
+      rank: 145,
     },
     elevationGain: {
       value: 3107,
-      rank: 155,
+      rank: 158,
     },
   },
   {
@@ -2538,15 +2586,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Orthja E.",
     distance: {
       value: 29,
-      rank: 174,
+      rank: 177,
     },
     elapsedTime: {
       value: 121,
-      rank: 194,
+      rank: 196,
     },
     elevationGain: {
       value: 3084,
-      rank: 156,
+      rank: 159,
     },
   },
   {
@@ -2554,15 +2602,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jason B.",
     distance: {
       value: 22,
-      rank: 198,
+      rank: 201,
     },
     elapsedTime: {
       value: 134,
-      rank: 183,
+      rank: 185,
     },
     elevationGain: {
       value: 3054,
-      rank: 157,
+      rank: 160,
     },
   },
   {
@@ -2570,15 +2618,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Parker B.",
     distance: {
       value: 22,
-      rank: 199,
+      rank: 202,
     },
     elapsedTime: {
       value: 136,
-      rank: 179,
+      rank: 181,
     },
     elevationGain: {
       value: 3014,
-      rank: 158,
+      rank: 161,
     },
   },
   {
@@ -2586,15 +2634,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Teriyaki G.",
     distance: {
       value: 30,
-      rank: 169,
+      rank: 172,
     },
     elapsedTime: {
       value: 154,
-      rank: 167,
+      rank: 169,
     },
     elevationGain: {
       value: 2992,
-      rank: 159,
+      rank: 162,
     },
   },
   {
@@ -2602,15 +2650,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Timothy S.",
     distance: {
       value: 24,
-      rank: 191,
+      rank: 194,
     },
     elapsedTime: {
       value: 108,
-      rank: 204,
+      rank: 206,
     },
     elevationGain: {
       value: 2966,
-      rank: 160,
+      rank: 163,
     },
   },
   {
@@ -2618,15 +2666,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Mauria N.",
     distance: {
       value: 35,
-      rank: 158,
+      rank: 160,
     },
     elapsedTime: {
       value: 185,
-      rank: 154,
+      rank: 155,
     },
     elevationGain: {
       value: 2805,
-      rank: 161,
+      rank: 164,
     },
   },
   {
@@ -2634,15 +2682,15 @@ export const sep22Data: RideType[] = [
     athleteName: "ali O.",
     distance: {
       value: 41,
-      rank: 136,
+      rank: 137,
     },
     elapsedTime: {
       value: 188,
-      rank: 153,
+      rank: 154,
     },
     elevationGain: {
       value: 2777,
-      rank: 162,
+      rank: 165,
     },
   },
   {
@@ -2650,15 +2698,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Melissa K.",
     distance: {
       value: 43,
-      rank: 130,
+      rank: 131,
     },
     elapsedTime: {
       value: 306,
-      rank: 93,
+      rank: 94,
     },
     elevationGain: {
       value: 2762,
-      rank: 163,
+      rank: 166,
     },
   },
   {
@@ -2666,15 +2714,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Quoc V.",
     distance: {
       value: 22,
-      rank: 200,
+      rank: 203,
     },
     elapsedTime: {
       value: 168,
-      rank: 162,
+      rank: 163,
     },
     elevationGain: {
       value: 2565,
-      rank: 164,
+      rank: 167,
     },
   },
   {
@@ -2682,15 +2730,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Mark M.",
     distance: {
       value: 20,
-      rank: 204,
+      rank: 207,
     },
     elapsedTime: {
       value: 115,
-      rank: 199,
+      rank: 201,
     },
     elevationGain: {
       value: 2546,
-      rank: 165,
+      rank: 168,
     },
   },
   {
@@ -2698,15 +2746,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Luke C.",
     distance: {
       value: 16,
-      rank: 212,
+      rank: 215,
     },
     elapsedTime: {
       value: 96,
-      rank: 211,
+      rank: 213,
     },
     elevationGain: {
       value: 2510,
-      rank: 166,
+      rank: 169,
     },
   },
   {
@@ -2714,15 +2762,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Fermin Robles S.",
     distance: {
       value: 16,
-      rank: 213,
+      rank: 216,
     },
     elapsedTime: {
       value: 79,
-      rank: 222,
+      rank: 224,
     },
     elevationGain: {
       value: 2411,
-      rank: 167,
+      rank: 170,
     },
   },
   {
@@ -2730,15 +2778,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Michael Y.",
     distance: {
       value: 32,
-      rank: 167,
+      rank: 169,
     },
     elapsedTime: {
       value: 121,
-      rank: 193,
+      rank: 195,
     },
     elevationGain: {
       value: 2369,
-      rank: 168,
+      rank: 171,
     },
   },
   {
@@ -2746,15 +2794,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Zackery S.",
     distance: {
       value: 37,
-      rank: 153,
+      rank: 155,
     },
     elapsedTime: {
       value: 181,
-      rank: 155,
+      rank: 156,
     },
     elevationGain: {
       value: 2352,
-      rank: 169,
+      rank: 172,
     },
   },
   {
@@ -2762,15 +2810,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Max S.",
     distance: {
       value: 40,
-      rank: 141,
+      rank: 142,
     },
     elapsedTime: {
       value: 174,
-      rank: 158,
+      rank: 159,
     },
     elevationGain: {
       value: 2290,
-      rank: 170,
+      rank: 173,
     },
   },
   {
@@ -2778,15 +2826,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Thomas H.",
     distance: {
       value: 19,
-      rank: 208,
+      rank: 211,
     },
     elapsedTime: {
       value: 113,
-      rank: 203,
+      rank: 205,
     },
     elevationGain: {
       value: 2280,
-      rank: 171,
+      rank: 174,
     },
   },
   {
@@ -2794,15 +2842,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Brandon T.",
     distance: {
       value: 41,
-      rank: 137,
+      rank: 138,
     },
     elapsedTime: {
       value: 162,
-      rank: 165,
+      rank: 167,
     },
     elevationGain: {
       value: 2264,
-      rank: 172,
+      rank: 175,
     },
   },
   {
@@ -2810,15 +2858,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Tony L.",
     distance: {
       value: 19,
-      rank: 209,
+      rank: 212,
     },
     elapsedTime: {
       value: 90,
-      rank: 214,
+      rank: 216,
     },
     elevationGain: {
       value: 2264,
-      rank: 173,
+      rank: 176,
     },
   },
   {
@@ -2826,15 +2874,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Todd S.",
     distance: {
       value: 28,
-      rank: 179,
+      rank: 182,
     },
     elapsedTime: {
       value: 118,
-      rank: 197,
+      rank: 199,
     },
     elevationGain: {
       value: 2244,
-      rank: 174,
+      rank: 177,
     },
   },
   {
@@ -2842,15 +2890,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Dan C.",
     distance: {
       value: 34,
-      rank: 162,
+      rank: 164,
     },
     elapsedTime: {
       value: 144,
-      rank: 175,
+      rank: 177,
     },
     elevationGain: {
       value: 2237,
-      rank: 175,
+      rank: 178,
     },
   },
   {
@@ -2862,11 +2910,11 @@ export const sep22Data: RideType[] = [
     },
     elapsedTime: {
       value: 346,
-      rank: 59,
+      rank: 60,
     },
     elevationGain: {
       value: 2208,
-      rank: 176,
+      rank: 179,
     },
   },
   {
@@ -2874,15 +2922,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Tom A.",
     distance: {
       value: 30,
-      rank: 170,
+      rank: 173,
     },
     elapsedTime: {
       value: 118,
-      rank: 196,
+      rank: 198,
     },
     elevationGain: {
       value: 2182,
-      rank: 177,
+      rank: 180,
     },
   },
   {
@@ -2890,15 +2938,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Henry E.",
     distance: {
       value: 23,
-      rank: 195,
+      rank: 198,
     },
     elapsedTime: {
       value: 123,
-      rank: 192,
+      rank: 194,
     },
     elevationGain: {
       value: 2139,
-      rank: 178,
+      rank: 181,
     },
   },
   {
@@ -2906,15 +2954,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Paxton R.",
     distance: {
       value: 24,
-      rank: 192,
+      rank: 195,
     },
     elapsedTime: {
       value: 108,
-      rank: 205,
+      rank: 207,
     },
     elevationGain: {
       value: 2034,
-      rank: 179,
+      rank: 182,
     },
   },
   {
@@ -2922,15 +2970,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Ryan L.",
     distance: {
       value: 57,
-      rank: 85,
+      rank: 86,
     },
     elapsedTime: {
       value: 202,
-      rank: 145,
+      rank: 146,
     },
     elevationGain: {
       value: 1995,
-      rank: 180,
+      rank: 183,
     },
   },
   {
@@ -2938,15 +2986,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Christian R.",
     distance: {
       value: 41,
-      rank: 138,
+      rank: 139,
     },
     elapsedTime: {
       value: 195,
-      rank: 148,
+      rank: 149,
     },
     elevationGain: {
       value: 1978,
-      rank: 181,
+      rank: 184,
     },
   },
   {
@@ -2954,15 +3002,15 @@ export const sep22Data: RideType[] = [
     athleteName: "colin F.",
     distance: {
       value: 12,
-      rank: 221,
+      rank: 224,
     },
     elapsedTime: {
       value: 115,
-      rank: 200,
+      rank: 202,
     },
     elevationGain: {
       value: 1972,
-      rank: 182,
+      rank: 185,
     },
   },
   {
@@ -2970,15 +3018,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Lance H.",
     distance: {
       value: 33,
-      rank: 164,
+      rank: 166,
     },
     elapsedTime: {
       value: 127,
-      rank: 189,
+      rank: 191,
     },
     elevationGain: {
       value: 1932,
-      rank: 183,
+      rank: 186,
     },
   },
   {
@@ -2986,15 +3034,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Stephen H.",
     distance: {
       value: 38,
-      rank: 148,
+      rank: 150,
     },
     elapsedTime: {
       value: 178,
-      rank: 156,
+      rank: 157,
     },
     elevationGain: {
       value: 1873,
-      rank: 184,
+      rank: 187,
     },
   },
   {
@@ -3002,15 +3050,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Graham D.",
     distance: {
       value: 61,
-      rank: 68,
+      rank: 69,
     },
     elapsedTime: {
       value: 322,
-      rank: 74,
+      rank: 75,
     },
     elevationGain: {
       value: 1827,
-      rank: 185,
+      rank: 188,
     },
   },
   {
@@ -3018,15 +3066,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Carlin T.",
     distance: {
       value: 20,
-      rank: 205,
+      rank: 208,
     },
     elapsedTime: {
       value: 119,
-      rank: 195,
+      rank: 197,
     },
     elevationGain: {
       value: 1821,
-      rank: 186,
+      rank: 189,
     },
   },
   {
@@ -3034,15 +3082,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Arturo T.",
     distance: {
       value: 15,
-      rank: 216,
+      rank: 219,
     },
     elapsedTime: {
       value: 101,
-      rank: 209,
+      rank: 211,
     },
     elevationGain: {
       value: 1818,
-      rank: 187,
+      rank: 190,
     },
   },
   {
@@ -3050,15 +3098,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Efran T.",
     distance: {
       value: 25,
-      rank: 187,
+      rank: 190,
     },
     elapsedTime: {
       value: 113,
-      rank: 202,
+      rank: 204,
     },
     elevationGain: {
       value: 1785,
-      rank: 188,
+      rank: 191,
     },
   },
   {
@@ -3066,15 +3114,15 @@ export const sep22Data: RideType[] = [
     athleteName: "John S.",
     distance: {
       value: 27,
-      rank: 181,
+      rank: 184,
     },
     elapsedTime: {
       value: 152,
-      rank: 170,
+      rank: 172,
     },
     elevationGain: {
       value: 1762,
-      rank: 189,
+      rank: 192,
     },
   },
   {
@@ -3082,15 +3130,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jack G.",
     distance: {
       value: 15,
-      rank: 217,
+      rank: 220,
     },
     elapsedTime: {
       value: 92,
-      rank: 213,
+      rank: 215,
     },
     elevationGain: {
       value: 1752,
-      rank: 190,
+      rank: 193,
     },
   },
   {
@@ -3098,15 +3146,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Andy H.",
     distance: {
       value: 38,
-      rank: 149,
+      rank: 151,
     },
     elapsedTime: {
       value: 196,
-      rank: 147,
+      rank: 148,
     },
     elevationGain: {
       value: 1745,
-      rank: 191,
+      rank: 194,
     },
   },
   {
@@ -3114,15 +3162,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Nicholas  H.",
     distance: {
       value: 23,
-      rank: 196,
+      rank: 199,
     },
     elapsedTime: {
       value: 153,
-      rank: 169,
+      rank: 171,
     },
     elevationGain: {
       value: 1745,
-      rank: 192,
+      rank: 195,
     },
   },
   {
@@ -3130,15 +3178,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Elias E.",
     distance: {
       value: 35,
-      rank: 159,
+      rank: 161,
     },
     elapsedTime: {
       value: 130,
-      rank: 186,
+      rank: 188,
     },
     elevationGain: {
       value: 1742,
-      rank: 193,
+      rank: 196,
     },
   },
   {
@@ -3146,15 +3194,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Kiefer G.",
     distance: {
       value: 16,
-      rank: 214,
+      rank: 217,
     },
     elapsedTime: {
       value: 89,
-      rank: 216,
+      rank: 218,
     },
     elevationGain: {
       value: 1709,
-      rank: 194,
+      rank: 197,
     },
   },
   {
@@ -3162,15 +3210,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Thomas S.",
     distance: {
       value: 45,
-      rank: 124,
+      rank: 125,
     },
     elapsedTime: {
       value: 202,
-      rank: 146,
+      rank: 147,
     },
     elevationGain: {
       value: 1680,
-      rank: 195,
+      rank: 198,
     },
   },
   {
@@ -3178,15 +3226,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Ulises G.",
     distance: {
       value: 25,
-      rank: 188,
+      rank: 191,
     },
     elapsedTime: {
       value: 143,
-      rank: 176,
+      rank: 178,
     },
     elevationGain: {
       value: 1667,
-      rank: 196,
+      rank: 199,
     },
   },
   {
@@ -3194,15 +3242,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Bryan W.",
     distance: {
       value: 12,
-      rank: 222,
+      rank: 225,
     },
     elapsedTime: {
       value: 60,
-      rank: 228,
+      rank: 230,
     },
     elevationGain: {
       value: 1620,
-      rank: 197,
+      rank: 200,
     },
   },
   {
@@ -3210,15 +3258,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Gerald G.",
     distance: {
       value: 46,
-      rank: 119,
+      rank: 120,
     },
     elapsedTime: {
       value: 211,
-      rank: 140,
+      rank: 141,
     },
     elevationGain: {
       value: 1598,
-      rank: 198,
+      rank: 201,
     },
   },
   {
@@ -3226,15 +3274,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Josh P.",
     distance: {
       value: 25,
-      rank: 189,
+      rank: 192,
     },
     elapsedTime: {
       value: 114,
-      rank: 201,
+      rank: 203,
     },
     elevationGain: {
       value: 1588,
-      rank: 199,
+      rank: 202,
     },
   },
   {
@@ -3242,15 +3290,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Ethan S.",
     distance: {
       value: 14,
-      rank: 218,
+      rank: 221,
     },
     elapsedTime: {
       value: 77,
-      rank: 223,
+      rank: 225,
     },
     elevationGain: {
       value: 1576,
-      rank: 200,
+      rank: 203,
     },
   },
   {
@@ -3258,15 +3306,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Fredy Z.",
     distance: {
       value: 38,
-      rank: 150,
+      rank: 152,
     },
     elapsedTime: {
       value: 174,
-      rank: 159,
+      rank: 160,
     },
     elevationGain: {
       value: 1516,
-      rank: 201,
+      rank: 204,
     },
   },
   {
@@ -3274,15 +3322,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Andrew A.",
     distance: {
       value: 16,
-      rank: 215,
+      rank: 218,
     },
     elapsedTime: {
       value: 90,
-      rank: 215,
+      rank: 217,
     },
     elevationGain: {
       value: 1476,
-      rank: 202,
+      rank: 205,
     },
   },
   {
@@ -3290,15 +3338,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Ja G.",
     distance: {
       value: 8,
-      rank: 239,
+      rank: 242,
     },
     elapsedTime: {
       value: 137,
-      rank: 178,
+      rank: 180,
     },
     elevationGain: {
       value: 1459,
-      rank: 203,
+      rank: 206,
     },
   },
   {
@@ -3306,15 +3354,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Vlad P.",
     distance: {
       value: 11,
-      rank: 225,
+      rank: 228,
     },
     elapsedTime: {
       value: 67,
-      rank: 225,
+      rank: 227,
     },
     elevationGain: {
       value: 1427,
-      rank: 204,
+      rank: 207,
     },
   },
   {
@@ -3322,15 +3370,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Lucas L.",
     distance: {
       value: 21,
-      rank: 202,
+      rank: 205,
     },
     elapsedTime: {
       value: 216,
-      rank: 138,
+      rank: 139,
     },
     elevationGain: {
       value: 1391,
-      rank: 205,
+      rank: 208,
     },
   },
   {
@@ -3338,15 +3386,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jimmy O.",
     distance: {
       value: 29,
-      rank: 175,
+      rank: 178,
     },
     elapsedTime: {
       value: 123,
-      rank: 191,
+      rank: 193,
     },
     elevationGain: {
       value: 1339,
-      rank: 206,
+      rank: 209,
     },
   },
   {
@@ -3354,15 +3402,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Maureen F.",
     distance: {
       value: 10,
-      rank: 232,
+      rank: 235,
     },
     elapsedTime: {
       value: 60,
-      rank: 230,
+      rank: 232,
     },
     elevationGain: {
       value: 1303,
-      rank: 207,
+      rank: 210,
     },
   },
   {
@@ -3370,15 +3418,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Ken F.",
     distance: {
       value: 10,
-      rank: 233,
+      rank: 236,
     },
     elapsedTime: {
       value: 107,
-      rank: 206,
+      rank: 208,
     },
     elevationGain: {
       value: 1250,
-      rank: 208,
+      rank: 211,
     },
   },
   {
@@ -3386,15 +3434,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Steve M.",
     distance: {
       value: 11,
-      rank: 226,
+      rank: 229,
     },
     elapsedTime: {
       value: 116,
-      rank: 198,
+      rank: 200,
     },
     elevationGain: {
       value: 1231,
-      rank: 209,
+      rank: 212,
     },
   },
   {
@@ -3402,15 +3450,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jack G.",
     distance: {
       value: 20,
-      rank: 206,
+      rank: 209,
     },
     elapsedTime: {
       value: 92,
-      rank: 212,
+      rank: 214,
     },
     elevationGain: {
       value: 1178,
-      rank: 210,
+      rank: 213,
     },
   },
   {
@@ -3418,15 +3466,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Tommy O.",
     distance: {
       value: 10,
-      rank: 234,
+      rank: 237,
     },
     elapsedTime: {
       value: 48,
-      rank: 235,
+      rank: 237,
     },
     elevationGain: {
       value: 1116,
-      rank: 211,
+      rank: 214,
     },
   },
   {
@@ -3434,15 +3482,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Andrew M.",
     distance: {
       value: 27,
-      rank: 182,
+      rank: 185,
     },
     elapsedTime: {
       value: 134,
-      rank: 181,
+      rank: 183,
     },
     elevationGain: {
       value: 1093,
-      rank: 212,
+      rank: 215,
     },
   },
   {
@@ -3451,15 +3499,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Timothy S.",
     distance: {
       value: 25,
-      rank: 190,
+      rank: 193,
     },
     elapsedTime: {
       value: 79,
-      rank: 221,
+      rank: 223,
     },
     elevationGain: {
       value: 1040,
-      rank: 213,
+      rank: 216,
     },
   },
   {
@@ -3467,15 +3515,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Henry T.",
     distance: {
       value: 7,
-      rank: 241,
+      rank: 244,
     },
     elapsedTime: {
       value: 50,
-      rank: 233,
+      rank: 235,
     },
     elevationGain: {
       value: 1025,
-      rank: 214,
+      rank: 217,
     },
   },
   {
@@ -3483,15 +3531,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Eddie G.",
     distance: {
       value: 57,
-      rank: 86,
+      rank: 87,
     },
     elapsedTime: {
       value: 251,
-      rank: 121,
+      rank: 122,
     },
     elevationGain: {
       value: 1004,
-      rank: 215,
+      rank: 218,
     },
   },
   {
@@ -3499,15 +3547,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Vlad P.",
     distance: {
       value: 11,
-      rank: 227,
+      rank: 230,
     },
     elapsedTime: {
       value: 47,
-      rank: 236,
+      rank: 238,
     },
     elevationGain: {
       value: 843,
-      rank: 216,
+      rank: 219,
     },
   },
   {
@@ -3515,15 +3563,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Danny Y.",
     distance: {
       value: 11,
-      rank: 228,
+      rank: 231,
     },
     elapsedTime: {
       value: 49,
-      rank: 234,
+      rank: 236,
     },
     elevationGain: {
       value: 840,
-      rank: 217,
+      rank: 220,
     },
   },
   {
@@ -3531,15 +3579,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Mark Y.",
     distance: {
       value: 17,
-      rank: 210,
+      rank: 213,
     },
     elapsedTime: {
       value: 130,
-      rank: 187,
+      rank: 189,
     },
     elevationGain: {
       value: 811,
-      rank: 218,
+      rank: 221,
     },
   },
   {
@@ -3547,7 +3595,7 @@ export const sep22Data: RideType[] = [
     athleteName: "Nedla R.",
     distance: {
       value: 17,
-      rank: 211,
+      rank: 214,
     },
     elapsedTime: {
       value: 500,
@@ -3555,7 +3603,7 @@ export const sep22Data: RideType[] = [
     },
     elevationGain: {
       value: 799,
-      rank: 219,
+      rank: 222,
     },
   },
   {
@@ -3563,15 +3611,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Michael R.",
     distance: {
       value: 11,
-      rank: 229,
+      rank: 232,
     },
     elapsedTime: {
       value: 42,
-      rank: 238,
+      rank: 240,
     },
     elevationGain: {
       value: 758,
-      rank: 220,
+      rank: 223,
     },
   },
   {
@@ -3579,15 +3627,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Se R.",
     distance: {
       value: 13,
-      rank: 219,
+      rank: 222,
     },
     elapsedTime: {
       value: 54,
-      rank: 231,
+      rank: 233,
     },
     elevationGain: {
       value: 738,
-      rank: 221,
+      rank: 224,
     },
   },
   {
@@ -3595,15 +3643,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Ryan C.",
     distance: {
       value: 7,
-      rank: 242,
+      rank: 245,
     },
     elapsedTime: {
       value: 66,
-      rank: 226,
+      rank: 228,
     },
     elevationGain: {
       value: 732,
-      rank: 222,
+      rank: 225,
     },
   },
   {
@@ -3611,15 +3659,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Se R.",
     distance: {
       value: 13,
-      rank: 220,
+      rank: 223,
     },
     elapsedTime: {
       value: 54,
-      rank: 232,
+      rank: 234,
     },
     elevationGain: {
       value: 722,
-      rank: 223,
+      rank: 226,
     },
   },
   {
@@ -3627,15 +3675,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Barbara S.",
     distance: {
       value: 20,
-      rank: 207,
+      rank: 210,
     },
     elapsedTime: {
       value: 82,
-      rank: 220,
+      rank: 222,
     },
     elevationGain: {
       value: 673,
-      rank: 224,
+      rank: 227,
     },
   },
   {
@@ -3643,15 +3691,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Andrew Monzon *.",
     distance: {
       value: 41,
-      rank: 139,
+      rank: 140,
     },
     elapsedTime: {
       value: 133,
-      rank: 184,
+      rank: 186,
     },
     elevationGain: {
       value: 660,
-      rank: 225,
+      rank: 228,
     },
   },
   {
@@ -3659,15 +3707,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Peter I.",
     distance: {
       value: 42,
-      rank: 134,
+      rank: 135,
     },
     elapsedTime: {
       value: 160,
-      rank: 166,
+      rank: 168,
     },
     elevationGain: {
       value: 634,
-      rank: 226,
+      rank: 229,
     },
   },
   {
@@ -3675,15 +3723,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Mac M.",
     distance: {
       value: 22,
-      rank: 201,
+      rank: 204,
     },
     elapsedTime: {
       value: 100,
-      rank: 210,
+      rank: 212,
     },
     elevationGain: {
       value: 562,
-      rank: 227,
+      rank: 230,
     },
   },
   {
@@ -3691,15 +3739,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Luke L.",
     distance: {
       value: 7,
-      rank: 243,
+      rank: 246,
     },
     elapsedTime: {
       value: 32,
-      rank: 243,
+      rank: 245,
     },
     elevationGain: {
       value: 529,
-      rank: 228,
+      rank: 231,
     },
   },
   {
@@ -3707,15 +3755,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jonathan C.",
     distance: {
       value: 26,
-      rank: 186,
+      rank: 189,
     },
     elapsedTime: {
       value: 102,
-      rank: 208,
+      rank: 210,
     },
     elevationGain: {
       value: 519,
-      rank: 229,
+      rank: 232,
     },
   },
   {
@@ -3723,15 +3771,15 @@ export const sep22Data: RideType[] = [
     athleteName: "AJ I.",
     distance: {
       value: 29,
-      rank: 176,
+      rank: 179,
     },
     elapsedTime: {
       value: 85,
-      rank: 218,
+      rank: 220,
     },
     elevationGain: {
       value: 473,
-      rank: 230,
+      rank: 233,
     },
   },
   {
@@ -3739,15 +3787,15 @@ export const sep22Data: RideType[] = [
     athleteName: "quiet S.",
     distance: {
       value: 10,
-      rank: 235,
+      rank: 238,
     },
     elapsedTime: {
       value: 38,
-      rank: 240,
+      rank: 242,
     },
     elevationGain: {
       value: 437,
-      rank: 231,
+      rank: 234,
     },
   },
   {
@@ -3755,15 +3803,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Grace M.",
     distance: {
       value: 11,
-      rank: 230,
+      rank: 233,
     },
     elapsedTime: {
       value: 106,
-      rank: 207,
+      rank: 209,
     },
     elevationGain: {
       value: 431,
-      rank: 232,
+      rank: 235,
     },
   },
   {
@@ -3771,15 +3819,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Soup",
     distance: {
       value: 27,
-      rank: 183,
+      rank: 186,
     },
     elapsedTime: {
       value: 69,
-      rank: 224,
+      rank: 226,
     },
     elevationGain: {
       value: 420,
-      rank: 233,
+      rank: 236,
     },
     url: "https://www.youtube.com/watch?v=KQLPL1qRhn8",
   },
@@ -3788,15 +3836,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Robby “Ridetime” H.",
     distance: {
       value: 23,
-      rank: 197,
+      rank: 200,
     },
     elapsedTime: {
       value: 178,
-      rank: 157,
+      rank: 158,
     },
     elevationGain: {
       value: 404,
-      rank: 234,
+      rank: 237,
     },
   },
   {
@@ -3804,15 +3852,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Benji Bockting L.",
     distance: {
       value: 9,
-      rank: 237,
+      rank: 240,
     },
     elapsedTime: {
       value: 46,
-      rank: 237,
+      rank: 239,
     },
     elevationGain: {
       value: 401,
-      rank: 235,
+      rank: 238,
     },
   },
   {
@@ -3820,15 +3868,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Dan C.",
     distance: {
       value: 5,
-      rank: 248,
+      rank: 251,
     },
     elapsedTime: {
       value: 37,
-      rank: 241,
+      rank: 243,
     },
     elevationGain: {
       value: 368,
-      rank: 236,
+      rank: 239,
     },
   },
   {
@@ -3836,15 +3884,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Andrew Monzon *.",
     distance: {
       value: 6,
-      rank: 244,
+      rank: 247,
     },
     elapsedTime: {
       value: 23,
-      rank: 251,
+      rank: 253,
     },
     elevationGain: {
       value: 345,
-      rank: 237,
+      rank: 240,
     },
   },
   {
@@ -3852,15 +3900,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jonathan M.",
     distance: {
       value: 4,
-      rank: 252,
+      rank: 255,
     },
     elapsedTime: {
       value: 16,
-      rank: 253,
+      rank: 256,
     },
     elevationGain: {
       value: 322,
-      rank: 238,
+      rank: 241,
     },
   },
   {
@@ -3868,15 +3916,15 @@ export const sep22Data: RideType[] = [
     athleteName: "SDSU Victor C.",
     distance: {
       value: 12,
-      rank: 223,
+      rank: 226,
     },
     elapsedTime: {
       value: 65,
-      rank: 227,
+      rank: 229,
     },
     elevationGain: {
       value: 319,
-      rank: 239,
+      rank: 242,
     },
   },
   {
@@ -3884,15 +3932,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Rudy B.",
     distance: {
       value: 6,
-      rank: 245,
+      rank: 248,
     },
     elapsedTime: {
       value: 26,
-      rank: 248,
+      rank: 250,
     },
     elevationGain: {
       value: 296,
-      rank: 240,
+      rank: 243,
     },
   },
   {
@@ -3900,15 +3948,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Everett W.",
     distance: {
       value: 35,
-      rank: 160,
+      rank: 162,
     },
     elapsedTime: {
       value: 195,
-      rank: 149,
+      rank: 150,
     },
     elevationGain: {
       value: 224,
-      rank: 241,
+      rank: 244,
     },
   },
   {
@@ -3917,15 +3965,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Bob B.",
     distance: {
       value: 21,
-      rank: 203,
+      rank: 206,
     },
     elapsedTime: {
       value: 88,
-      rank: 217,
+      rank: 219,
     },
     elevationGain: {
       value: 210,
-      rank: 242,
+      rank: 245,
     },
   },
   {
@@ -3933,15 +3981,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Lauren S.",
     distance: {
       value: 10,
-      rank: 236,
+      rank: 239,
     },
     elapsedTime: {
       value: 84,
-      rank: 219,
+      rank: 221,
     },
     elevationGain: {
       value: 168,
-      rank: 243,
+      rank: 246,
     },
   },
   {
@@ -3949,15 +3997,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jordan K.",
     distance: {
       value: 5,
-      rank: 249,
+      rank: 252,
     },
     elapsedTime: {
       value: 25,
-      rank: 249,
+      rank: 251,
     },
     elevationGain: {
       value: 160,
-      rank: 244,
+      rank: 247,
     },
   },
   {
@@ -3965,15 +4013,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Ryan B.",
     distance: {
       value: 6,
-      rank: 246,
+      rank: 249,
     },
     elapsedTime: {
       value: 29,
-      rank: 244,
+      rank: 246,
     },
     elevationGain: {
       value: 155,
-      rank: 245,
+      rank: 248,
     },
   },
   {
@@ -3981,15 +4029,15 @@ export const sep22Data: RideType[] = [
     athleteName: "𝓢𝓽𝓪𝓰𝓮 2 𝓒𝔂𝓬𝓵𝓮𝓻𝔂 𝓜.",
     distance: {
       value: 11,
-      rank: 231,
+      rank: 234,
     },
     elapsedTime: {
       value: 38,
-      rank: 239,
+      rank: 241,
     },
     elevationGain: {
       value: 151,
-      rank: 246,
+      rank: 249,
     },
   },
   {
@@ -3997,15 +4045,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Luke L.",
     distance: {
       value: 3,
-      rank: 254,
+      rank: 257,
     },
     elapsedTime: {
       value: 11,
-      rank: 254,
+      rank: 257,
     },
     elevationGain: {
       value: 138,
-      rank: 247,
+      rank: 250,
     },
   },
   {
@@ -4013,15 +4061,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Zixuan(Paris) W.",
     distance: {
       value: 5,
-      rank: 250,
+      rank: 253,
     },
     elapsedTime: {
       value: 22,
-      rank: 252,
+      rank: 254,
     },
     elevationGain: {
       value: 125,
-      rank: 248,
+      rank: 251,
     },
   },
   {
@@ -4029,15 +4077,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Nick G.",
     distance: {
       value: 12,
-      rank: 224,
+      rank: 227,
     },
     elapsedTime: {
       value: 60,
-      rank: 229,
+      rank: 231,
     },
     elevationGain: {
       value: 122,
-      rank: 249,
+      rank: 252,
     },
   },
   {
@@ -4045,15 +4093,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jordan K.",
     distance: {
       value: 9,
-      rank: 238,
+      rank: 241,
     },
     elapsedTime: {
       value: 36,
-      rank: 242,
+      rank: 244,
     },
     elevationGain: {
       value: 111,
-      rank: 250,
+      rank: 253,
     },
   },
   {
@@ -4061,15 +4109,15 @@ export const sep22Data: RideType[] = [
     athleteName: "quiet S.",
     distance: {
       value: 8,
-      rank: 240,
+      rank: 243,
     },
     elapsedTime: {
       value: 27,
-      rank: 247,
+      rank: 249,
     },
     elevationGain: {
       value: 89,
-      rank: 251,
+      rank: 254,
     },
   },
   {
@@ -4077,15 +4125,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Robby “Ridetime” H.",
     distance: {
       value: 5,
-      rank: 251,
+      rank: 254,
     },
     elapsedTime: {
       value: 28,
-      rank: 246,
+      rank: 248,
     },
     elevationGain: {
       value: 67,
-      rank: 252,
+      rank: 255,
     },
   },
   {
@@ -4093,15 +4141,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jonathan M.",
     distance: {
       value: 4,
-      rank: 253,
+      rank: 256,
     },
     elapsedTime: {
       value: 24,
-      rank: 250,
+      rank: 252,
     },
     elevationGain: {
       value: 53,
-      rank: 253,
+      rank: 256,
     },
   },
   {
@@ -4109,15 +4157,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Cooper M.",
     distance: {
       value: 1,
-      rank: 255,
+      rank: 258,
     },
     elapsedTime: {
       value: 3,
-      rank: 257,
+      rank: 260,
     },
     elevationGain: {
       value: 53,
-      rank: 254,
+      rank: 257,
     },
   },
   {
@@ -4125,15 +4173,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Jordan K.",
     distance: {
       value: 6,
-      rank: 247,
+      rank: 250,
     },
     elapsedTime: {
       value: 28,
-      rank: 245,
+      rank: 247,
     },
     elevationGain: {
       value: 44,
-      rank: 255,
+      rank: 258,
     },
   },
   {
@@ -4141,32 +4189,32 @@ export const sep22Data: RideType[] = [
     athleteName: "James L.",
     distance: {
       value: 1,
-      rank: 256,
+      rank: 259,
     },
     elapsedTime: {
       value: 5,
-      rank: 256,
+      rank: 259,
     },
     elevationGain: {
       value: 44,
-      rank: 256,
+      rank: 259,
     },
-    url: "https://www.strava.com/athletes/5411032"
+    url: "https://www.strava.com/athletes/5411032",
   },
   {
     title: "Afternoon Ride",
     athleteName: "Rob R.",
     distance: {
       value: 1,
-      rank: 257,
+      rank: 260,
     },
     elapsedTime: {
       value: 2,
-      rank: 258,
+      rank: 261,
     },
     elevationGain: {
       value: 40,
-      rank: 257,
+      rank: 260,
     },
   },
   {
@@ -4174,15 +4222,15 @@ export const sep22Data: RideType[] = [
     athleteName: "Tommy O.",
     distance: {
       value: 1,
-      rank: 258,
+      rank: 261,
     },
     elapsedTime: {
       value: 6,
-      rank: 255,
+      rank: 258,
     },
     elevationGain: {
       value: 17,
-      rank: 258,
+      rank: 261,
     },
   },
 ];
