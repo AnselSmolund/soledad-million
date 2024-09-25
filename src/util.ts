@@ -31,7 +31,7 @@ export const getCurrentDateLabelForView = () => {
 export const getTotalElevation = () => {
   let val = 0;
   sep22Data.forEach((ride) => {
-    val += ride.elevationGain;
+    val += ride.elevationGain.value;
   });
   console.log(val);
 };

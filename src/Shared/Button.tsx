@@ -2,7 +2,11 @@ import React from "react";
 import { Box, Button } from "@mui/material";
 import { MAIN_COLOR } from "../util";
 
-export const NavButton = (props) => {
+interface NavButtonProps {
+  handleNavigate: () => void;
+  text: string;
+}
+export const NavButton: React.FC<NavButtonProps> = (props) => {
   const { handleNavigate, text } = props;
   return (
     <Box sx={{ mt: 0 }}>
