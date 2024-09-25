@@ -14,4 +14,4 @@ const shuffleArray = <T>(array: T[]): T[] => {
 };
 
 // Shuffle the photos array
-const shuffledPhotos = shuffleArray(photos);
+shuffleArray(photos);
