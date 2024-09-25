@@ -15,7 +15,7 @@ export const PhotoPage = () => {
       }}
     >
       <Typography variant="h3" color={MAIN_COLOR}>
-        UPLOADING PHOTOS RIGHT NOW... COME BACK SOON
+        BOOOOOP... COME BACK SOON
       </Typography>
     </Box>
   );
