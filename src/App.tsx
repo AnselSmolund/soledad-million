@@ -13,7 +13,6 @@ import { Leaderboard } from "./Leaderboard";
 import { MAIN_COLOR, SECONDARY_COLOR, THIRD_COLOR } from "./util";
 import { PhotoPage } from "./PhotoPage";
 import { Stats } from "./Stats";
-import { shuffledPhotos } from "./photos";
 
 function HomePage() {
   const navigate = useNavigate();
