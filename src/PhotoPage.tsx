@@ -1,8 +1,11 @@
 import React from "react";
+import "./App.css";
 import { Box, ImageList, ImageListItem, Typography, useMediaQuery } from "@mui/material";
-import { MAIN_COLOR, SECONDARY_COLOR } from "./util";
+import { MAIN_COLOR, SECONDARY_COLOR, THIRD_COLOR } from "./util";
 import { NavButton } from "./Shared/Button";
-import { photos } from "./photos";
+import { shuffledPhotos } from "./photos";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export const PhotoPage = () => {
   const isSmallScreen = useMediaQuery('(max-width:600px)');
@@ -35,20 +38,30 @@ export const PhotoPage = () => {
         url="/"
         text={"go back"}
       />
+      <Typography variant="h3" color={MAIN_COLOR}>
+        SOLEDAD MILLION GALLERY
+      </Typography>
+      <Typography fontSize="15px" color={THIRD_COLOR}> 
+        Want to thank Henry and James? Leave a tip 
+        <a href="buymeacoffee.com/jamesphotographyco" target="_blank" rel="noopener noreferrer" style={{ color: MAIN_COLOR, textDecoration: 'none' }}> here!</a>
+      </Typography>
       <ImageList variant="standard" cols={getCols()} gap={5*getCols()}> 
-      {photos.map((item) => (
+      {shuffledPhotos.map((item) => (
         <ImageListItem key={item.img}>
-          <img
-            srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-            src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-            loading="lazy"
+          <LazyLoadImage
+            src={item.img}
+            width={"100%"}
             alt={item.alt}
+            effect="blur"
+            wrapperProps={{
+              style: {transitionDelay: "0.4s"},
+            }}
           />
         </ImageListItem>
       ))}
       </ImageList>
       <Typography sx={{ paddingTop: 4 }} variant="h3" color={MAIN_COLOR}>
-        STILL UPLOADING... COME BACK SOON FOR MORE
+        MORE PHOTOS COMING SOON...
       </Typography>
     </Box>
   );
