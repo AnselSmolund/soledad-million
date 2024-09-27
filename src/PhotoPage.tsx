@@ -49,6 +49,7 @@ export const PhotoPage = () => {
         <a
           href="https://www.buymeacoffee.com/jamesphotographyco"
           target="_blank"
+          rel="noreferrer"
           style={{ color: MAIN_COLOR, textDecoration: "none" }}
         >
           {" "}
